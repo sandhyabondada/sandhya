@@ -1,0 +1,20 @@
+
+@import 'variable';
+@import 'mixins';
+@import 'common';
+@import 'maintenance';
+@import 'edit-payorplan';
+@import 'payor-planservice';
+@import 'cn-cot';
+@import 'sandata-cn';
+@import 'visit-review';
+
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

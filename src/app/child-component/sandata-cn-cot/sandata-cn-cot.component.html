@@ -1,0 +1,68 @@
+
+
+
+<br><br><br><br>    
+
+<div class="col-md-4  container sandata shadow mb-5 bg-white rounded">
+    <div class="bg-white">
+        <form action="" class="container">
+            <fieldset>
+                <legend class="mx-2 fw-bold text-secondary">Sandata Payor/Plan Service</legend>
+                <div class="d-flex mx-4 pdropdown">
+                    <span class="p-float-label mx-3 mt-3">
+                        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
+                           
+                        </p-dropdown>
+                        <label class="pt-2">Site</label>
+                    </span>
+                    <span class="p-float-label">
+                        <input id="username" class=" w-75  mt-3 bg-secondary pb-3 p-4 mx-2" disabled/>
+                        <label htmlFor="username" class="pt-2 px-3 text-white">State Service </label>
+                    </span>
+                    <div class="mt-4 ">
+                        <i class="pipi-server fs-5" ></i>
+                        <i class="pi pi-server fs-5 text-black bg-success fw-normal" ></i>
+                    </div>
+                </div>
+                <div class="d-flex mx-4">
+                    <span class="p-float-label mt-4 ">
+                        <p-calendar class="mx-3"></p-calendar>
+                        <label class="pt-2 px-3">Effective Form</label>
+                    </span>
+                    <span class="p-float-label mt-4 ">
+                        <p-calendar class="mx-2"></p-calendar>
+                        <label class="pt-2 px-3">Effective Upto</label>
+                    </span>
+                </div>
+              <div class="mt-4 mx-4 mb-2 d-flex justify-content-between">
+                <button type="button" class="text-white  bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
+                <button type="button" class="text-white  bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
+              </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="d-flex mt-2">
+        <div class=" container  ">
+            <table class="table table-bordered ">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Service </th>
+                        <th>State Service </th>
+                        <th>Effective From </th>
+                        <th>Effective To </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+    
+            </table>
+        </div>
+    
+    </div>
+</div>
+
+
+<br><br><br><br>

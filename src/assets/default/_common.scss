@@ -1,0 +1,51 @@
+
+.poc-lite-start{
+  background-image: linear-gradient(to bottom right, #76bd43, #145194);
+  height: 100vh;
+//  height: 100%; 
+//  width: 100%;
+  h4{
+    color: rgb(22, 48, 108);
+  }
+    
+    .border-white{
+      border: 1px solid white;
+      background-color: white;
+      width: 50%;
+    
+      // height: 80%;
+      margin-left: 150px
+     }
+    .input-border input{
+      @include border-radius(2px, 10px, 2px, 10px);
+       background-color: rgb(216, 235, 252);
+       outline: none;
+      //  border: 1px solid rgb(26, 25, 25)
+  
+    }
+    // .input-border p-password{
+    //   @include border-radius(0px, 10px, 0px, 10px);
+    //    background-color: rgb(203, 225, 243);
+    //    outline: none !important;
+    //    height: 50px!important;
+    //    padding: 0;
+  
+    // }
+    .input-border button{
+      @include border-radius(3px, 8px, 3px, 8px);
+      background-color:   #76bd43;
+    }
+    p{
+      font-size: 14px;
+      color: rgb(66, 137, 213);
+    }
+   }  
+   tbody{
+    font-size: 13px;
+    font-weight: 500;
+   }  
+  table{
+    height: 100px;
+  }
+
+

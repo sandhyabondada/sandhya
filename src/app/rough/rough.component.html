@@ -1,0 +1,562 @@
+
+<div class=" bg-black p-2 position-relative">
+    <div class=" d-flex justify-content-between  ">
+        <div>
+            <i class="pi pi-bars text-white px-2 fs-5"></i>
+            <img src="assets/icons/all-ways-caring-logo.png" alt="" height="40" class="mx-2">
+        </div>
+        <div>
+            <img src=" assets\icons\Icon.svg" alt="" height="40">
+            <span class="text-white fs-4 ">Payor/Plan</span>
+        </div>
+        <div>
+               <div class="dropdown-center mt-1">
+                    <button class="btn btn-black dropdown-toggle text-primary border-0" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="true">
+                        Administrator, Administrator
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"> <i class="pi pi-key px-2 text-secondary"></i>Change
+                                Password</a></li>
+                        <li><a class="dropdown-item" routerLink="/logout"><i class="pi pi-sign-out px-2 text-danger"></i>Log Out
+                        </a></li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<!-- container1 finished -->
+<div class=" d-flex payor ">
+    <div>
+    <div class="  mt-1 bg-primary w-100 container mx-4 private  ">
+        <div class="d-flex col-md-8  pt-4  ">
+            <div class="  justify-content-center px-2">
+                <span class="p-float-label">
+                    <input pInputText id="username" />
+                    <label htmlFor="username" class="text-white">Payor Code</label>
+                </span>
+            </div>
+            <div class=" justify-content-center px-2">
+                <span class="p-float-label">
+                    <input pInputText id="username" />
+                    <label htmlFor="username" class="text-white">Plan Code</label>
+                </span>
+            </div>
+            <div class="  justify-content-center px-2">
+                <span class="p-float-label">
+                    <input pInputText id="username" />
+                    <label htmlFor="username" class="text-white">Plan Name</label>
+                </span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class=" ">
+                <div class="d-flex mx-3 mt-3 text-white">
+                    <div class="flex align-items-center ">
+                        <p>Private Duty</p>
+                    </div>
+                    <div class="flex align-items-center mx-3">
+                        <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient"
+                            inputId="ingredient1"></p-radioButton>
+                        <label for="ingredient1" class="mx-1">All</label>
+                    </div>
+                    <div class="flex align-items-center mx-3">
+                        <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient"
+                            inputId="ingredient2"></p-radioButton>
+                        <label for="ingredient2" class="mx-1">Yes</label>
+                    </div>
+                    <div class="flex align-items-center mx-3">
+                        <p-radioButton name="pizza" value="Pepper" [(ngModel)]="ingredient"
+                            inputId="ingredient3"></p-radioButton>
+                        <label for="ingredient3" class="mx-1">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-white m-2 search-btn ">
+                <button type="button" class="text-white mx-1 "> <i class="pi pi-search  px-1 "  (click)="getPayorPlanList()"></i>Go</button>
+            </div>
+
+            
+        </div>
+   
+    </div>
+
+    <div class="row mt-1  margin ">
+        <div class="   w-100 col-md-12 container">
+            <table class="table table-bordered ">
+                <thead class="table-dark  " >
+                    <tr>
+                        <th>  <i class="pi pi-bars icon"></i> </th>
+                        <th>Payor Code </th>
+                        <th>Plan Code </th>
+                        <th>Plan Name </th>
+                        <th>Effective From </th>
+                        <th>Effective To </th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of payorPlanList">
+                        <td class="dropdown pen sticky-md-bottom"  > 
+   
+                            <i class="pi pi-bars icon fw-bold"   (click)="toggleDropdown()"></i>
+                            <ul *ngIf="isDropdownOpen" class="dropdown-content m-2 ">
+                              <li (click)="onClick()" class="pt-2 fw-semibold ">
+                                <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
+                              <li class="pt-4  fw-semibold p-1" (click)="OnSubmit()">
+                                <i class="pi pi-file  text-success fw-bold me-2"></i>Visit Review Attributes</li>
+                            
+                            </ul>
+                      
+                         
+                            <td>{{item.payorCode}}</td> 
+                            <td>{{item.planCode}}</td>
+                       
+                        <td>{{item.plan}}</td>
+                       
+                       
+                        <td>{{item.fromDateString}}</td>
+                        <td>{{item.toDateString}}</td>
+                    </tr>
+                </tbody>
+    
+            </table>
+
+            
+        </div>
+    
+    </div>
+  
+</div>
+    <!-- container2 finished -->
+
+
+     <div class="col-md-4  container box-shadow shadow mb-5 bg-white  data" *ngIf="payorplan">
+      
+            <div class="text-white fs-5 px-3 bg-primary mt-1 ">
+                <p class="p-1">Payor/Plan</p>
+            </div>
+    
+        <div class="bg-white">
+            <form action="" class="container">
+             
+                    <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2 rounded  ng-star-inserted">
+                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center"> Payor/Plan  </p>
+                
+                    <input type="text" id="fname" name="fname" placeholder="Plan Code *" class="rounded w-25 mx-2 mt-3" required disabled  />
+               
+                    <input type="text" id="lname" name="lname" placeholder="Plan Name *" class="rounded large" disabled>
+
+                    <textarea id="description" name="description" rows="4" cols="63" class="text-secondary rounded mt-3 mx-2" disabled>Description</textarea>
+            
+                    <input type="email" id="email" name="email" placeholder="Client Type" class="rounded small mx-2 mt-3" disabled>
+             
+                    <input type="text" id="birthday" name="birthday" placeholder="Client Classes" class="rounded small mx-2" disabled>
+
+                    <input type="text" id="lname" name="lname" placeholder="Effective Form" class="rounded small mx-2 mt-3" disabled>
+            
+                    <input type="email" id="email" name="email" placeholder="Effective To" class="rounded small mx-2" disabled> <br>
+                   
+                        <label class="text-secondary mx-2 mt-3 private-duty">Private Duty</label>
+                   
+                      <a class=" form-switch" >  <input class="form-check-input mt-3 ck" type="checkbox" value="yes "  checked disabled></a>
+                  
+               
+                      <div class="text-white m-2  mt-4 ">
+                   <button type="button" class="text-white  w-25 bg-black mx-2" disabled> <a class="text-white"> <i class="pi pi-times"></i>Cancel </a></button>
+                    </div>
+
+                    </div>
+
+            </form>
+        </div>
+     
+    </div>  
+    
+
+
+    <div class="col-md-4  container box-shadow shadow  bg-white  edit pdropdown sandata data cn-cot payor-paln " *ngIf="payload" > 
+        <div class="text-white fs-5 px-3 bg-primary mt-1 ">
+            <p class="p-1">Payor/Plan</p>
+        </div>
+    
+
+     <p-tabView>
+     <p-tabPanel header="Payor/Plan">
+    <div class="bg-white ">
+    <form action="" class=" ">
+        <fieldset>
+            <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
+                <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> Payor/Plan  </p>
+            <div class="d-flex mt-2">
+                <span class="p-float-label">
+                    <input  id="username"  class="rounded  mx-3 mt-2  small" type="number" />
+                    <label htmlFor="username" class="pt-2 px-3">client type</label>
+                </span>
+                <span class="p-float-label">
+                    <input  id="username" class="rounded  mt-2 mx-1 large " type="text"/>
+                    <label  class="pt-2 px-3">client classes</label>
+                </span>
+            </div>
+                <span class="p-float-label">
+                    <textarea id="float-input" rows="3" cols="61" class="rounded mt-4 mx-3"></textarea>
+                    <label class="pt-4 mx-3">Summary</label>
+                </span>
+            <div class="d-flex">
+                <span class="p-float-label">
+                    <input  id="username"  class="rounded  mx-3 mt-3 " />
+                    <label htmlFor="username" class="pt-3 px-3">client type</label>
+                </span>
+                <span class="p-float-label">
+                    <input  id="username" class="rounded  mx-2 mt-3 " />
+                    <label  class="pt-3 px-3">client classes</label>
+                </span>
+            </div>
+            <div class="d-flex mt-3 border-0 ">
+                <div class=" mx-3 p-float-label">
+                  <input type="text"
+                    
+                         class="form-control  "
+                         bsDatepicker
+                         [bsConfig]="{ adaptivePosition: true }">
+                         <label >Effective From</label>
+                </div>
+                <div class="mx-2 p-float-label">
+                  <input type="text"
+                       
+                         class="form-control "
+                         bsDatepicker
+                         [bsConfig]="{ adaptivePosition: true }">
+                         <label class="px-2">Effective To</label>
+                </div>
+              </div>
+            <label class="text-secondary mx-3 mt-3 private-duty fw-bold">Private Duty</label>
+              <a class=" form-switch" >  <input class="form-check-input mt-3 text-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"  checked 
+                style="width: 50px; " disabled></a>
+              <div class="text-white   mt-4 mb-2 mx-3">
+                <button type="button" class="text-white  w-25 bg-black  btt" (click)="cancel()" > <i class="pi pi-times"></i>Cancel</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+</div>     
+ </p-tabPanel>
+
+
+
+
+
+ <p-tabPanel header="Payor/Plan Service">
+    <p-dropdown [options]="options" [(ngModel)]="selectedOption"></p-dropdown>
+    <div *ngIf="selectedOption === 'Form1'; else form2">
+        <p>Please select site to view or edit the data</p>
+      </div>
+      <ng-template #form2>
+        <div *ngIf="selectedOption === 'Form2' else noFormSelected">
+            <form action="" class="container  con-input mt-3 ">
+                <fieldset>
+                    <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
+                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
+                  
+                    <div class="d-flex ">
+                        <span class="p-float-label">
+                            <input id="username" class="rounded mx-4  mt-3 bg-secondary" disabled/>
+                            <label htmlFor="username" class="pt-3 px-4 text-white">Service </label>
+                        </span>
+                        <span class="p-float-label">
+                            <input id="username" class="rounded  mx-2 mt-3 " />
+                            <label class="pt-3 px-3">Pay Rate</label>
+                        </span>
+                    </div>
+                    <div class="d-flex mt-3 border-0 ">
+                        <div class=" mx-4 p-float-label">
+                          <input type="text"
+                            
+                                 class="form-control  "
+                                 bsDatepicker
+                                 [bsConfig]="{ adaptivePosition: true }">
+                                 <label >Effective From</label>
+                        </div>
+                        <div class="mx-2 p-float-label">
+                          <input type="text"
+                               
+                                 class="form-control "
+                                 bsDatepicker
+                                 [bsConfig]="{ adaptivePosition: true }">
+                                 <label class="px-2">Effective To</label>
+                        </div>
+                      </div>
+                    <div class="d-flex mx-4 inputswitch">
+                        <div>
+                            <label class=" mx-3 mt-3 private-duty">Facility Type</label>
+                            <div class=" justify-content-center mx-4 ">
+                                <a class=" form-switch "> <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
+                                        checked></a>
+                            </div>
+                        </div>
+                        <div class="switch">
+                            <label class="  mt-3 private-duty">Allow  Double Booking</label>
+                            <div class=" justify-content-center mx-2 ">
+                                <a class=" form-switch"> <input class="form-check-input mt-3 check" type="checkbox" value="yes "
+                                        checked></a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="p-float-label mx-4 mt-1">
+                        <input id="username" class="rounded  mx-3 mt-3 " />
+                        <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
+                    </span> 
+                  <div class="mt-4 mx-4 mb-2">
+                    <button type="button" class="text-white  w-25 bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
+                    <button type="button" class="text-white  w-25 bg-primary mx-2">Reset</button>
+                    <button type="button" class="text-white  w-25 bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
+                  </div>
+                    </div>
+                </fieldset>
+            </form> 
+        </div>
+      </ng-template>
+      <ng-template #noFormSelected>
+        <p>Please select site to view or edit the data</p>
+      </ng-template>
+     </p-tabPanel>    
+
+
+
+
+
+
+
+
+ <p-tabPanel header="Sandata Payor/Plan Service">
+<p-dropdown [options]="options" [(ngModel)]="selectedOption"></p-dropdown>
+<div *ngIf="selectedOption === 'Form1'; then form1 "></div>
+<div *ngIf="selectedOption === 'Form3'; then form3 "></div>
+<ng-template #form1>
+    <p>Please select site to view or edit the data</p>
+</ng-template>
+<ng-template #form2>
+    <p>Please select site to view or edit the data</p>
+</ng-template>
+<ng-template #form3>
+    <form action="" class="container in-field mt-3">
+        <fieldset>
+            <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
+                <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> Sandata Payor/Plan Service  </p>
+          
+            <div class="d-flex mx-4 pdropdown">
+                <span class="p-float-label mx-3 mt-3 nnn w-50">
+                    <p-dropdown [options]="countriess" [(ngModel)]="selectedCountrys" optionLabel="name" [filter]="true" filterBy="name" diaabled [showClear]="true" placeholder="Select a Country">  
+                    </p-dropdown>
+                    <label class="pt-2">Site</label>
+                </span>
+                <span class="p-float-label ddd">
+                    <input id="username" class=" w-75  mt-3 bg-secondary pb-3 p-4 ddd" disabled/>
+                    <label htmlFor="username" class="pt-2 px-3 text-white">State Service </label>
+                </span>
+                <div class="mt-4 mx-4">
+                    <i class="pipi-server fs-5" ></i>
+                    <i class="pi pi-server fs-5 text-black bg-success fw-normal" ></i>
+                </div>
+            </div>
+            <div class="d-flex mt-3 border-0 ">
+                <div class=" mx-3 p-float-label">
+                  <input type="text"
+                    
+                         class="form-control  "
+                         bsDatepicker
+                         [bsConfig]="{ adaptivePosition: true }">
+                         <label >Effective From</label>
+                </div>
+                <div class="mx-2 p-float-label">
+                  <input type="text"
+                       
+                         class="form-control "
+                         bsDatepicker
+                         [bsConfig]="{ adaptivePosition: true }">
+                         <label class="px-2">Effective To</label>
+                </div>
+              </div>
+          <div class="mt-4 mx-4 mb-2 d-flex justify-content-between">
+            <button type="button" class="text-white  bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
+            <button type="button" class="text-white  bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
+          </div>
+            </div>
+        </fieldset>
+    </form>
+    <div class="d-flex mt-2">
+        <div class=" container  ">
+            <table class="table table-bordered ">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Service </th>
+                        <th>State Service </th>
+                        <th>Effective From </th>
+                        <th>Effective To </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+</ng-template>
+ </p-tabPanel>
+            
+  </p-tabView> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    </div> 
+
+
+
+
+    <div class="d-flex view justify-content-center position-absolute top-50 start-50 translate-middle" *ngIf="VisitReview">
+        <div class="col-md-12  shadow mb-5 bg-white rounded ">
+            <div class="d-flex justify-content-between bg-black text-white pt-2 px-2 fs-5 border">
+                <p class="fs-5">Visit Review Attributes</p>
+                <i><i class="pi pi-times" (click)="onsubmit()"></i></i>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>Does Payor Provide a Timesheet that is Required?</p>
+              
+                <div class=" text-secondary">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>PS Daily Signature Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>DCS Daily Signature Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>PS Weekly Signature Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>DCS Weekly Signature Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>Tasks Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>Progress Notes Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>Supervisor Sign off Required?</p>
+                <div class="text-secondary pb-2">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between text-black pt-2 container ">
+                <p>Documentation Required to be sent to Hub/Payor?</p>
+                <div class=" text-secondary">
+                    <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                        <option selected=""class="text-black">Select</option>
+                        <option value="1" class="text-black">Yes</option>
+                        <option value="2" class="text-black">No</option>
+                       
+                      </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
