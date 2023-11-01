@@ -16,6 +16,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { PaginatorModule } from 'primeng/paginator';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PocLoginComponent } from './component/poc-login/poc-login.component';
@@ -65,6 +66,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TabViewModule,
     TreeSelectModule,
     PaginatorModule,
+    
     BsDatepickerModule.forRoot()
 
   ],

@@ -95,9 +95,9 @@
                         <th>Effective To </th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody style="height: 100px;">
                     <tr *ngFor="let item of payorPlanList">
-                        <td class="dropdown pen sticky-md-bottom"  > 
+                        <td class="dropdown pen "  > 
    
                             <i class="pi pi-bars icon fw-bold"   (click)="toggleDropdown()"></i>
                             <ul *ngIf="isDropdownOpen" class="dropdown-content m-2 ">
@@ -119,14 +119,15 @@
                         <td>{{item.toDateString}}</td>
                     </tr>
                 </tbody>
-    
             </table>
-
-            
         </div>
-    
     </div>
-  
+
+    
+   
+   
+
+
 </div>
     <!-- container2 finished -->
 

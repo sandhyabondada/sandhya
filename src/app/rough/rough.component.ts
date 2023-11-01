@@ -27,7 +27,6 @@ constructor(private api:ApiService){}
 
   ingredient!: string;
    checked: boolean = false;
-
    isDropdownOpen = false;
 
    toggleDropdown() {
@@ -37,46 +36,29 @@ constructor(private api:ApiService){}
 
 
    countriess: any[] | undefined;
-
    selectedCountrys: any | undefined;
 
    
 
    
   countries: any[] | undefined;
-
   selectedCountry: any | undefined;
 
   ngOnInit() {
-      this.countries = [
-          { name: 'CN COT AAA(72084)' },
-          { name: 'CN COT ADOPTION SUBSIDY(720)' },
-          { name: 'CN COT NARBHA(72087)'},
-          { name: 'CN COTTONWOOD DDD(72013)' },
-          { name: 'CN COTTONWOOD EVERCARE(72)' },
-          { name: 'Germany' },
-          { name: 'India'},
-          { name: 'Japan' },
-          { name: 'Spain' },
-          { name: 'United States' }
-      ];
-      this.countriess = [   
-      ];
-  
-      this.getPayorPlanList();
+
+   this.getPayorPlanList();
     
   }
 
 
-  public payorPlanList:any=[];
+public payorPlanList:any=[];
 public planName:any;
 public payorCode=''
 public privateDuty='';
 public planCode=''
-
 public lowerBound: number = 1;
 public upperBound: number = 20;
-  public getPayorPlanList() {
+public getPayorPlanList() {
    
      let obj = { 
       "id": "", 
@@ -91,7 +73,7 @@ public upperBound: number = 20;
 
      this.api.getPayorPlanList(JSON.stringify(obj)).subscribe(res => {
        this.payorPlanList = res;
-   console.log(res);
+        console.log(res);
    
      })
    }
@@ -104,7 +86,7 @@ options: any[] = [
   { label: 'Form 3', value: 'Form3' }
 ];
 
-selectedOption: string = ''; // Initially, no form is selected
+selectedOption: string = '';
 
 
 cncot=false;
@@ -121,13 +103,6 @@ OnSubmit(){
 onsubmit(){
   this.VisitReview=false;
 }
-
-
-
-
-
-
-
 
 
 
