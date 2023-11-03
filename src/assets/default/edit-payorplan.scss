@@ -59,7 +59,7 @@ a{
     height: 35px;
 }
 .p-float-label .large{
-    width: 313px;
+    width: 286px;
     height: 35px;
 }
 .p-float-label .small{
@@ -68,6 +68,20 @@ a{
     background-color: none;
     height: 35px;
 }
-
+.large{
+    width: 286px;
+}
+.planname{
+    width: 40%;
+   
+}
 
 }
+.pointer {
+    cursor: pointer;
+}
+.table-responsive{
+    height: 60vh;
+    overflow: auto;
+}
+

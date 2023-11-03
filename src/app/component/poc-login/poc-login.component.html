@@ -1,4 +1,4 @@
-<div class="d-flex poc-lite-start ">
+<div class="d-flex poc-lite-start position-relative">
     <div class="col-md-6 container p-5 ">
         <img src="assets/icons/all-ways-caring-logo.png" alt="" class="pt-5 mt-5">
         <h3 class="text-white mt-1 fw-normal fs-1 pt-3">Welcome To POC Lite</h3>
@@ -6,30 +6,56 @@
     <div class="col-md-6 input-border  text-center d-flex justify-content-evenly   mt-5 mb-5 container ">
         <div class="border-white  pt-5 mt-5 px-3 mb-5 rounded">
             <h4 class=" fw-semibold ">POC Lite</h4>
-            <form  [formGroup]="studentForm" (ngSubmit)="onSubmit()">
-            <div class=" w-100 mt-5">
-                <span class="p-input-icon-right w-100">
-                <input type="text"  class="w-100 border border-1 p-1 px-3" value="administrator"/>
-                </span>
-              
-            </div>
-            <div class=" w-100 mt-4">
-               
-                <span class="p-input-icon-right w-100">
-                    <i class="pi pi-eye text-black fw-bold "></i>
-                    <input type="password" id="password" value="louisville" class="w-100  border border-1 p-1 px-3" />
-                </span>
-            </div>
-            <div class="w-100 mt-4 ">
-                <button type="button" class="btn  w-100 text-white fw-medium" routerLink="/login">Login</button>
-            </div>
-           <p class="mt-5 pt-5 ">Copyright @ 2020. Aquila Software Inc.</p>
-         <div class="">
+            <form [formGroup]="loginForm">
+                <div class=" w-100 mt-5">
+                    <span class="p-input-icon-right w-100">
+                    <input type="text"  class="w-100 border border-1 p-1 px-3"
+                      formControlName="email"  value="administrator" />
+                    </span>
 
-         </div>
+                    <div *ngIf="(issubmitted && loginForm.controls['email'].invalid)">
+                        <small class= "text-danger" *ngIf="loginForm.controls['email'].errors?.['required']" > UserID required </small>
+                    </div>
+                </div>
+
+                <div class=" w-100 mt-4">
+                    <span class="p-input-icon-right w-100">
+                        <i class="pi pi-eye text-black fw-bold"></i>
+                        <input type="password" id="password" value="louisville" 
+                         class="w-100 border border-1 p-1 px-3"  formControlName="password"/>   
+                    </span>
+
+                    <div *ngIf="(issubmitted && loginForm.controls['email'].invalid) || loginForm.controls['email'].touched">
+                        <small class= "text-danger" *ngIf="loginForm.controls['password'].errors?.['required']" > password required </small>
+                    </div>
+                </div>
+
+                <div class="w-100 mt-4 ">
+                    <button type="button" class="btn w-100 text-white fw-medium" 
+                    (click)="submitLogin(loginForm.value)">Login</button>
+                  
+                </div>
+
+                <p class="mt-5 pt-5 ">Copyright @ 2020. Aquila Software Inc.</p>
+
+                <div class=""></div>
        
-    </form>
+            </form>
 </div>
+    </div>
+
+
+
+
+    <div class="bg-white  px-5 pt-3 pb-3 text-center container position-absolute top-50 start-50 translate-middle rounded" style="width: 30%;"
+    *ngIf="loginfailed">
+        <i class="pi pi-times fs-1  text-danger border border-3  border-danger rounded-circle fw-bold p-2 mt-3"></i>
+        <h2 class="pt-3">Login failed</h2>
+        <p>Invalid Login Credentials.</p>
+        <button class="rounded text-white p-2 px-3 fw-semibold "
+         style="background-color: rgb(168, 86, 245);  border: 2px solid rgb(164, 241, 164) ; "
+          (click)="Ok()">OK</button>
+       
     </div>
 </div>
 
@@ -42,3 +68,26 @@
 
 
 
+<!-- <form  >
+    <div class=" w-100 mt-5">
+        <span class="p-input-icon-right w-100">
+        <input type="text"  class="w-100 border border-1 p-1 px-3" value="administrator"/>
+        </span>
+      
+    </div>
+    <div class=" w-100 mt-4">
+       
+        <span class="p-input-icon-right w-100">
+            <i class="pi pi-eye text-black fw-bold "></i>
+            <input type="password" id="password" value="louisville" class="w-100  border border-1 p-1 px-3" />
+        </span>
+    </div>
+    <div class="w-100 mt-4 ">
+        <button type="button" class="btn  w-100 text-white fw-medium" routerLink="/login">Login</button>
+    </div>
+   <p class="mt-5 pt-5 ">Copyright @ 2020. Aquila Software Inc.</p>
+ <div class="">
+
+ </div>
+
+    </form> -->

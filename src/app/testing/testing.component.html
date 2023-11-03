@@ -1,247 +1,11 @@
-<div class=" bg-black p-2">
-    <div class=" d-flex justify-content-between  ">
-        <div>
-            <i class="pi pi-bars text-white px-2 fs-5"></i>
-            <img src="assets/icons/all-ways-caring-logo.png" alt="" height="40" class="mx-2">
-        </div>
-        <div>
-            <img src=" assets\icons\Icon.svg" alt="" height="40">
-            <span class="text-white fs-4 ">Payor/Plan</span>
-        </div>
-        <div>
-      
-                <div class="dropdown-center mt-1">
-                    <button class="btn btn-black dropdown-toggle text-primary border-0" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="true">
-                        Administrator, Administrator
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"> <i class="pi pi-key px-2 text-secondary"></i>Change
-                                Password</a></li>
-                        <li><a class="dropdown-item" routerLink="/logout"><i class="pi pi-sign-out px-2 text-danger"></i>Log Out
-                            </a></li>
-                    </ul>
-                </div>
-     
-        </div>
-    </div>
-</div>
-<!-- container1 finished -->
-<div class=" d-flex payor ">
-    <div>
-
- 
-    <div class="  mt-1 bg-primary w-100 container mx-4 private ">
-        <div class="d-flex col-md-8  pt-4  ">
-            <div class="  justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username" />
-                    <label htmlFor="username" class="text-white">Payor Code</label>
-                </span>
-            </div>
-            <div class=" justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username" />
-                    <label htmlFor="username" class="text-white">Plan Code</label>
-                </span>
-            </div>
-            <div class="  justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username" />
-                    <label htmlFor="username" class="text-white">Plan Name</label>
-                </span>
-            </div>
-        </div>
-        <div class="d-flex justify-content-between">
-            <div class=" ">
-                <div class="d-flex mx-3 mt-3 text-white">
-                    <div class="flex align-items-center ">
-                        <p>Private Duty</p>
-                    </div>
-                    <div class="flex align-items-center mx-3">
-                        <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient"
-                            inputId="ingredient1"></p-radioButton>
-                        <label for="ingredient1" class="mx-1">All</label>
-                    </div>
-                    <div class="flex align-items-center mx-3">
-                        <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient"
-                            inputId="ingredient2"></p-radioButton>
-                        <label for="ingredient2" class="mx-1">Yes</label>
-                    </div>
-                    <div class="flex align-items-center mx-3">
-                        <p-radioButton name="pizza" value="Pepper" [(ngModel)]="ingredient"
-                            inputId="ingredient3"></p-radioButton>
-                        <label for="ingredient3" class="mx-1">No</label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-white m-2 search-btn ">
-                <button type="button" class="text-white mx-1 "> <i class="pi pi-search  px-1 "></i>Go</button>
-            </div>
-
-            
-        </div>
-   
-    </div>
-
-    <div class="row mt-1  margin ">
-        <div class="   w-100 col-md-12 container">
-            <table class="table table-bordered ">
-                <thead class="table-dark">
-                    <tr>
-                        <th>  </th>
-                        <th>Effective To </th>
-                        <th>Service </th>
-                        <th>State Service </th>
-                        <th>Effective From </th>
-                        <th>Effective To </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-    
-            </table>
-        </div>
-    
-    </div>
-    <!-- <div class="dropdown mx-4">
-   
-        <i class="pi pi-bars icon" style="font-size: 2rem"  (click)="toggleDropdown()"></i>
-        <ul *ngIf="isDropdownOpen" class="dropdown-content">
-          <li><a href="#"  routerLink="./editplan">editpayorplan </a></li>
-          <li><a href="#">maptask 2</a></li>
-        
-        </ul>
-      </div> -->
-</div>
-    <!-- container2 finished -->
-
-
-     <!-- <div class="col-md-4  container box-shadow shadow mb-5 bg-white rounded data">
-      
-            <div class="text-white fs-5 px-3 bg-primary mt-1 ">
-                <p class="p-1">Payor/Plan</p>
-            </div>
-    
-        <div class="bg-white">
-            <form action="" class="container ">
-                <fieldset>
-                    <legend class="mx-2 ">Payor/Plan</legend>
-                
-                    <input type="text" id="fname" name="fname" placeholder="Plan Code *" class="rounded w-25 mx-2" required disabled  />
-               
-                    <input type="text" id="lname" name="lname" placeholder="Plan Name *" class="rounded large" disabled>
-
-                    <textarea id="description" name="description" rows="4" cols="65" class="text-secondary rounded mt-3 mx-2" disabled>Description</textarea>
-            
-                    <input type="email" id="email" name="email" placeholder="Client Type" class="rounded small mx-2 mt-3" disabled>
-             
-                    <input type="text" id="birthday" name="birthday" placeholder="Client Classes" class="rounded small mx-2" disabled>
-
-                    <input type="text" id="lname" name="lname" placeholder="Effective Form" class="rounded small mx-2 mt-3" disabled>
-            
-                    <input type="email" id="email" name="email" placeholder="Effective To" class="rounded small mx-2" disabled> <br>
-                   
-                        <label class="text-secondary mx-2 mt-3 private-duty">Private Duty</label>
-                   
-                      <a class=" form-switch" >  <input class="form-check-input mt-3 ck" type="checkbox" value="yes "  checked disabled></a>
-                  
-               
-                      <div class="text-white m-2  mt-4 ">
-                   <button type="button" class="text-white  w-25 bg-black mx-2" disabled> <a class="text-white"> <i class="pi pi-times"></i>Cancel </a></button>
-                    </div>
-
-                    
-
-                </fieldset>
-            </form>
-        </div>
-     
-    </div>  -->
-     <div class="col-md-4  container box-shadow shadow  bg-white rounded edit pdropdown sandata data cn-cot payor-paln"> 
-        <div class="text-white fs-5 px-3 bg-primary mt-1 ">
-            <p class="p-1">Payor/Plan</p>
-        </div>
-    
 
 
 
-
-        <p-tabView>
-            <p-tabPanel header="Payor/Plan">
-    <div class="bg-white ">
-    <form action="" class=" ">
-        <fieldset>
-            <legend class="mx-2 ">Payor/Plan</legend>
-            <div class="d-flex ">
-                <span class="p-float-label">
-                    <input  id="username"  class="rounded  mx-3 mt-2  small" type="number" />
-                    <label htmlFor="username" class="pt-2 px-3">client type</label>
-                </span>
-                <span class="p-float-label">
-                    <input  id="username" class="rounded  mt-2 mx-1 large " type="text"/>
-                    <label  class="pt-2 px-3">client classes</label>
-                </span>
-            </div>
-                <span class="p-float-label">
-                    <textarea id="float-input" rows="3" cols="61" class="rounded mt-4 mx-3"></textarea>
-                    <label class="pt-4 mx-3">Summary</label>
-                </span>
-            <div class="d-flex">
-                <span class="p-float-label">
-                    <input  id="username"  class="rounded  mx-3 mt-3 " />
-                    <label htmlFor="username" class="pt-3 px-3">client type</label>
-                </span>
-                <span class="p-float-label">
-                    <input  id="username" class="rounded  mx-3 mt-3 " />
-                    <label  class="pt-3 px-3">client classes</label>
-                </span>
-            </div>
-            <span class="p-float-label mt-4 ">
-            <p-calendar class="mx-3" ></p-calendar>
-            <p-calendar class="mx-3"></p-calendar>
-        </span>
-            <label class="text-secondary mx-3 mt-3 private-duty">Private Duty</label>
-              <a class=" form-switch" >  <input class="form-check-input mt-3 " type="checkbox" role="switch" id="flexSwitchCheckDefault"  checked  disabled></a>
-              <div class="text-white   mt-4 mb-2 mx-3">
-                <button type="button" class="text-white  w-25 bg-black  btt" > <i class="pi pi-times"></i>Cancel</button>
-            </div>
-        </fieldset>
-    </form>
-</div>
-        
- </p-tabPanel>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           <p-tabPanel header="Payor/PlanService">
-            
-<div class="pdropdown mx-4">
-    <span class="p-float-label">
+<div class=" flex justify-content-center">
     <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
-        <ng-template pTemplate="selectedItem" >
-            <div class="flex align-items-center w-50" *ngIf="selectedCountry">
-           
+        <ng-template pTemplate="selectedItem">
+            <div class="flex align-items-center gap-2" >
+               
                 <div>{{ selectedCountry.name }}</div>
             </div>
         </ng-template>
@@ -252,355 +16,85 @@
             </div>
         </ng-template>
     </p-dropdown>
-    <label >Site</label>
-</span>
-<p class="fw-bold">please select site to view or edit the data</p>
 </div>
 
 
 
-
-
-
-<form action="" class="container  con-input ">
-    <fieldset>
-        <legend class="mx-2 fw-bold text-secondary">ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service</legend>
-        <div class="d-flex ">
-            <span class="p-float-label">
-                <input id="username" class="rounded mx-4  mt-3 bg-secondary" disabled/>
-                <label htmlFor="username" class="pt-3 px-4 text-white">Service </label>
-            </span>
-            <span class="p-float-label">
-                <input id="username" class="rounded  mx-2 mt-3 " />
-                <label class="pt-3 px-3">Pay Rate</label>
-            </span>
-        </div>
-        <div class="d-flex ">
-            <span class="p-float-label mt-4 ">
-                <p-calendar class="mx-4"></p-calendar>
-                <label class="pt-2 px-4">Effective Form</label>
-            </span>
-            <span class="p-float-label mt-4 ">
-                <p-calendar class="mx-2"></p-calendar>
-                <label class="pt-2 px-3">Effective Upto</label>
-            </span>
-        </div>
-        
-        <div class="d-flex mx-4 inputswitch">
-            <div>
-                <label class=" mx-3 mt-3 private-duty">Facility Type</label>
-                <div class=" justify-content-center mx-4 ">
-                    <a class=" form-switch "> <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
-                            checked></a>
-                </div>
-            </div>
-            <div class="switch">
-                <label class="  mt-3 private-duty">Allow  Double Booking</label>
-                <div class=" justify-content-center mx-2 ">
-                    <a class=" form-switch"> <input class="form-check-input mt-3 check" type="checkbox" value="yes "
-                            checked></a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- <span class="p-float-label mx-4">
-            <input id="username" class="rounded  mx-3 mt-3 " />
-            <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
-        </span> -->
-
-
-      <div class="mt-4 mx-4 mb-2">
-        <button type="button" class="text-white  w-25 bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
-
-
-        <button type="button" class="text-white  w-25 bg-primary mx-2">Reset</button>
-
-
-        <button type="button" class="text-white  w-25 bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
-      </div>
-    </fieldset>
-</form>
-
-
-            </p-tabPanel>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-           
-                <!-- <ng-template pTemplate="header">
-                  <span class="f-15 AvenirLTStd-Heavy"> Payor/Plan Service</span>
-                </ng-template>
-              
-           
-                <div 
-                  class="visit-information position-relative border-2 rounded my-3 mr-4 ml-2">
-                  <p class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center">
-                    ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service
-                  </p>
-                  <div class="p-2">
-                    <div class="row m-0">
-                      <div class="col-lg-6 pt-4">
-                        <span class="p-float-label ">
-                          <input type="text" pInputText class="w-100 input-shadow bg-light-grey" [disabled]="true"
-                            id="plan-code" />
-                          <label for="plan-code" class=" color-black AvenirLTStd-Roman f-14">
-                            Service
-                            <span class="text-danger">*</span></label>
-                        </span>
-                      </div>
-      
-                      <div class="col-lg-6  pt-4">
-                        <span class="p-float-label ">
-                          <input type="text" pInputText class="w-100 input-shadow bg-light-grey" id="plan"
-                            />
-                          <label for="plan" class=" color-black AvenirLTStd-Roman f-14">
-                            Pay Rate <span class="text-danger">*</span></label>
-                        </span>
-                      </div>
-                    </div>
-      
-                    <div class="row m-0 mt-4">
-                      <div class="col-lg-6  ">
+<p-tabView>
+<p-tabPanel header="Payor/Plan Service">
+    <span class="p-float-label">
+        <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList" [options]="UserOfficeList"
+          [(ngModel)]="UserOfficeList.name" [virtualScroll]="true" [itemSize]="30" optionValue="id" (click)="PayorPlanService('payorplanserviceForm' )"
+          optionLabel="name" class="w-50"
+          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form">
+        </p-dropdown>
+        <label for="dropdown" class="color-black">Site</label>
+      </span>
+      <!-- <p *ngIf="payorplanserviceForm" class="mt-2 ml-4 font-weight-bold mb-0 f-16">Please select site to view or
+        edit the data</p>
+            <form action="" class="container  con-input mt-3 " *ngIf="!payorplanserviceForm">
+                <fieldset>
+                    <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
+                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
+                  
+                    <div class="d-flex ">
                         <span class="p-float-label">
-                          <input type="text"
-                            class="bg-light-grey input-shadow h-auto w-100 auth-form-input" bsDatepicker maxlength="10"
-                            autocomplete="off" placeholder="MM/DD/YYYY" pInputText />
-                          <label for="from" class=" color-black AvenirLTStd-Roman f-14">
-                            Effective From
-                          </label>
+                            <input id="username" class="rounded mx-4  mt-3 bg-secondary" disabled/>
+                            <label htmlFor="username" class="pt-3 px-4 text-white">Service </label>
                         </span>
-                      </div>
-                      <div class="col-lg-6 ">
                         <span class="p-float-label">
-                          <input type="text"
-                            class="bg-light-grey input-shadow h-auto w-100 auth-form-input" bsDatepicker maxlength="10"
-                            autocomplete="off" placeholder="MM/DD/YYYY" pInputText />
-                          <label for="from" class=" color-black AvenirLTStd-Roman f-14">
-                            Effective Up To
-                          </label>
+                            <input id="username" class="rounded  mx-2 mt-3 " />
+                            <label class="pt-3 px-3">Pay Rate</label>
                         </span>
-                      </div>
                     </div>
-                    <div class="row mt-3 ml-2">
-                      <div class="col-lg-6">
-                        <label for="clientClasses" class=" AvenirLTStd-Roman f-14">
-                          Facility Type</label>
-                        <div class="check-box-wrapper d-flex">
-                          <a href="javascript:void(0)" class="on-off-toggle">
-                            <input readonly class="on-off-toggle__input l-0 m-0"
-                             
-                              type="checkbox" id="active_2" />
-                            <label for="active_2" class="on-off-toggle__slider d-flex"></label>
-                          </a>
+                    <div class="d-flex mt-3 border-0 ">
+                        <div class=" mx-4 p-float-label">
+                          <input type="text"
+                            
+                                 class="form-control  "
+                                 bsDatepicker
+                                 [bsConfig]="{ adaptivePosition: true }">
+                                 <label >Effective From</label>
                         </div>
-                      </div>
-                      <div class="col-lg-6 ">
-                        <label for="clientClasses" class=" AvenirLTStd-Roman f-14">
-                          Allow Double Booking</label>
-                        <div class="check-box-wrapper d-flex">
-                          <a href="javascript:void(0)" class="on-off-toggle">
-                            <input readonly class="on-off-toggle__input l-0 m-0"
-                           type="checkbox" id="active_1" />
-                            <label for="active_1" class="on-off-toggle__slider d-flex"></label>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-      
-                    <div class="pt-4 col-lg-6 ">
-                      <span class="p-float-label ">
-                        <input type="text" pInputText class="w-100 input-shadow bg-light-grey"
-                          id="plan" />
-                        <label for="plan" class=" color-black AvenirLTStd-Roman f-14">
-                          Times Double Booking</label>
-                      </span>
-                    </div>
-                    <div class="d-flex mt-3 p-2">
-                      <button type="button" class="btn-common  bg-dark" >
-                        <i class="fas fa-times mr-2"></i>Cancel
-                      </button>
-                      <button type="button" class="btn-common btn-blue" >
-                        Reset
-                      </button>
-                      <button class="btn-common btn-green" ><i
-                          class="pi pi-save mr-1"></i>Save</button>
-                    </div>
-                  </div>
-                </div>
-                <div  class="table-responsive box-shadow mb-3 mt-2 ml-2"
-                  style="height: calc(100vh - 650px)">
-                  <table class="table  mb-0 visit-table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th class=" border-right sticky-top p-1"></th>
-                        <th class=" border-right sticky-top p-1">Service</th>
-                        <th class=" border-right sticky-top p-1">State Service</th>
-                        <th class=" border-right sticky-top p-1">Effective From</th>
-                        <th class=" border-right sticky-top p-1">Effective To</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-container >
-                        <tr >
-                          <td class="border-right p-1">
-                            <span class="material-icons-outlined cursor-pointer color-green" 
-                              pTooltip="Edit PayorPlan">
-                              edit
-                            </span>
-                          </td>
-                          <td class="border-right p-1">
-                           
-                          </td>
-                          <td class="border-right p-1">
-                          
-                          </td>
-                          <td class="border-right p-1">
-                           
-                          </td>
-                          <td class="border-right p-1">
-                           
-                          </td>
-                        </tr>
-                      </ng-container>
-                    </tbody>
-                  </table>
-                  <p class="no-records text-center AvenirLTStd-Heavy f-20">No Records
-                    Found</p>
-                </div> -->
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <p-tabPanel header="Sandata Payor/Plan Service">
-                <div class="pdropdown mx-4 ">
-                    <span class="p-float-label droop">
-                    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
-                        <ng-template pTemplate="selectedItem" >
-                            <div class="flex align-items-center w-75" *ngIf="selectedCountry">
-                           
-                                <div>{{ selectedCountry.name }}</div>
-                            </div>
-                        </ng-template>
-                        <ng-template let-country pTemplate="item">
-                            <div class="flex align-items-center gap-2">
+                        <div class="mx-2 p-float-label">
+                          <input type="text"
                                
-                                <div>{{ country.name }}</div>
+                                 class="form-control "
+                                 bsDatepicker
+                                 [bsConfig]="{ adaptivePosition: true }">
+                                 <label class="px-2">Effective To</label>
+                        </div>
+                      </div>
+                    <div class="d-flex mx-4 inputswitch">
+                        <div>
+                            <label class=" mx-3 mt-3 private-duty">Facility Type</label>
+                            <div class=" justify-content-center mx-4 ">
+                                <a class=" form-switch "> <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
+                                        checked></a>
                             </div>
-                        </ng-template>
-                    </p-dropdown>
-                    <label >Site</label>
-                </span>
-                <p class="fw-bold">please select site to view or edit the data</p>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="bg-white">
-                    <form action="" class="container in-field">
-                        <fieldset>
-                            <legend class="mx-2 fw-bold text-secondary">Sandata Payor/Plan Service</legend>
-                            <div class="d-flex mx-4 pdropdown">
-                                <span class="p-float-label mx-3 mt-3 nnn w-50">
-                                    <p-dropdown [options]="countriess" [(ngModel)]="selectedCountrys" optionLabel="name" [filter]="true" filterBy="name" diaabled [showClear]="true" placeholder="Select a Country">
-                                       
-                                    </p-dropdown>
-                                    <label class="pt-2">Site</label>
-                                </span>
-                                <span class="p-float-label ddd">
-                                    <input id="username" class=" w-75  mt-3 bg-secondary pb-3 p-4 ddd" disabled/>
-                                    <label htmlFor="username" class="pt-2 px-3 text-white">State Service </label>
-                                </span>
-                                <div class="mt-4 mx-4">
-                                    <i class="pipi-server fs-5" ></i>
-                                    <i class="pi pi-server fs-5 text-black bg-success fw-normal" ></i>
-                                </div>
+                        </div>
+                        <div class="switch">
+                            <label class="  mt-3 private-duty">Allow  Double Booking</label>
+                            <div class=" justify-content-center mx-2 ">
+                                <a class=" form-switch"> <input class="form-check-input mt-3 check" type="checkbox" value="yes "
+                                        checked></a>
                             </div>
-                            <div class="d-flex mx-4">
-                                <span class="p-float-label mt-4 ">
-                                    <p-calendar class="mx-3 w-25"></p-calendar>
-                                    <label class="pt-2 px-3">Effective Form</label>
-                                </span>
-                                <span class="p-float-label mt-4 ">
-                                    <p-calendar class="mx-2 "></p-calendar>
-                                    <label class="pt-2 px-3">Effective Upto</label>
-                                </span>
-                            </div>
-                          <div class="mt-4 mx-4 mb-2 d-flex justify-content-between">
-                            <button type="button" class="text-white  bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
-                            <button type="button" class="text-white  bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
-                          </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="d-flex mt-2">
-                    <div class=" container  ">
-                        <table class="table table-bordered ">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Service </th>
-                                    <th>State Service </th>
-                                    <th>Effective From </th>
-                                    <th>Effective To </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                
-                        </table>
+                        </div>
                     </div>
-                
-                </div>
-            </p-tabPanel>
-        </p-tabView> 
-    </div> 
-</div>
+                    <span class="p-float-label mx-4 mt-1">
+                        <input id="username" class="rounded  mx-3 mt-3 " />
+                        <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
+                    </span> 
+                  <div class="mt-4 mx-4 mb-2">
+                    <button type="button" class="text-white  w-25 bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
+                    <button type="button" class="text-white  w-25 bg-primary mx-2">Reset</button>
+                    <button type="button" class="text-white  w-25 bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
+                  </div>
+                    </div>
+                </fieldset>
+            </form>  -->
+       
+     </p-tabPanel> 
 
 
 
@@ -608,6 +102,13 @@
 
 
 
+
+
+
+
+
+    
+    </p-tabView>
 
 
 

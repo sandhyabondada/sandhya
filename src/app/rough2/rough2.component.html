@@ -32,13 +32,13 @@
         <div class="d-flex col-md-8  pt-4  ">
             <div class="  justify-content-center px-2">
                 <span class="p-float-label">
-                    <input pInputText id="username" [(ngModel)]=" payorCode "/>
-                    <label htmlFor="username" class="text-white" >Payor Code</label>
+                    <input pInputText id="username"  [(ngModel)]=" payorCode "/>
+                    <label htmlFor="username" class="text-white">Payor Code</label>
                 </span>
             </div>
             <div class=" justify-content-center px-2">
                 <span class="p-float-label">
-                    <input pInputText id="username" [(ngModel)]="planCode"/>
+                    <input pInputText id="username"  [(ngModel)]="planCode"/>
                     <label htmlFor="username" class="text-white">Plan Code</label>
                 </span>
             </div>
@@ -84,12 +84,8 @@
 
     <div class="row mt-1  margin ">
         <div class="   w-100 col-md-12 container">
-          
-            <p-scroller [items]="items" [itemSize]="1" scrollHeight="800px" styleClass="border-1 surface-border" [style]="{'width': '750px', 'height': '200px'}">
-                <ng-template pTemplate="item" let-item let-options="options">
-                    <table class="table table-bordered ">
-                       
-                <thead class="table-dark sticky-top" >
+            <table class="table table-bordered ">
+                <thead class="table-dark  " >
                     <tr>
                         <th>  <i class="pi pi-bars icon"></i> </th>
                         <th>Payor Code </th>
@@ -98,24 +94,20 @@
                         <th>Effective From </th>
                         <th>Effective To </th>
                     </tr>
-                    
                 </thead>
-              
-                    
-                       
                 <tbody style="height: 100px;">
                     <tr *ngFor="let item of payorPlanList">
                         <td class="dropdown pen "  > 
    
                             <i class="pi pi-bars icon fw-bold"   (click)="toggleDropdown()"></i>
                             <ul *ngIf="isDropdownOpen" class="dropdown-content m-2 ">
-                              <li (click)="onClick()" class="pt-2 fw-semibold ">
-                                <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
-                              <li class="pt-4  fw-semibold p-1" (click)="OnSubmit()">
+                              <li (click)="onClick(item)" class="pt-2 fw-semibold pointer ">
+                             <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
+                              <li class="pt-4  fw-semibold p-1 pointer " (click)="OnSubmit()">
                                 <i class="pi pi-file  text-success fw-bold me-2"></i>Visit Review Attributes</li>
                             
                             </ul>
-                      
+                        </td>
                          
                             <td>{{item.payorCode}}</td> 
                             <td>{{item.planCode}}</td>
@@ -127,25 +119,12 @@
                         <td>{{item.toDateString}}</td>
                     </tr>
                 </tbody>
-           
-   
-        
-           
             </table>
-       
-        </ng-template>
-    </p-scroller>
         </div>
     </div>
 
     
-    <div class="card flex justify-content-center">
-        <p-scroller [items]="items" [itemSize]="50" scrollHeight="200px" styleClass="border-1 surface-border" [style]="{'width': '200px', 'height': '200px'}">
-            <ng-template pTemplate="item" let-item let-options="options">
-                <div class="flex align-items-center p-2" [ngClass]="{ 'surface-ground': options.odd }" style="height: 50px;">{{ item }}</div>
-            </ng-template>
-        </p-scroller>
-    </div>
+   
    
 
 
@@ -206,61 +185,67 @@
      <p-tabView>
      <p-tabPanel header="Payor/Plan">
     <div class="bg-white ">
-    <form action="" class=" ">
-        <fieldset>
-            <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
-                <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> Payor/Plan  </p>
-            <div class="d-flex mt-2">
-                <span class="p-float-label">
-                    <input  id="username"  class="rounded  mx-3 mt-2  small" type="number" />
-                    <label htmlFor="username" class="pt-2 px-3">client type</label>
-                </span>
-                <span class="p-float-label">
-                    <input  id="username" class="rounded  mt-2 mx-1 large " type="text"/>
-                    <label  class="pt-2 px-3">client classes</label>
-                </span>
+        <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
+            <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center " style="position: absolute ; top: -18px;"> Payor/Plan  </p>
+        <div class="d-flex mt-2">
+            <span class="p-float-label">
+                
+                <input  id="plan-code"  type="number" 
+                 pInputText class="w-75 input-shadow bg-light-grey rounded  ms-3 mt-3  small text-black" 
+                 [readOnly]="true" [(ngModel)]="payorPlanItem.planCode" [ngModelOptions]="{standalone: true}"/>
+                 <label htmlFor="username" class="pt-3 px-3">Plan Code</label>
+            </span>
+            <span class="p-float-label">
+                <input  id="username" class="rounded  mt-3  large  planname" type="text" 
+                pInputText class=" input-shadow bg-light-grey rounded   mt-3  large text-black" 
+                 [(ngModel)]="payorPlanItem.plan"   [readOnly]="true"/>
+                <label  class="pt-3 px-1">Plan Name</label>
+            </span>
+        </div>
+            <span class="p-float-label">
+                <textarea id="float-input" rows="3" cols="58" 
+                pInputText class="rounded mt-4 mx-3 text-black" [readOnly]="true"
+                [(ngModel)]="payorPlanItem.plan" ></textarea>
+                <label class="pt-4 mx-3">Summary</label>
+            </span>
+        <div class="d-flex">
+            <span class="p-float-label">
+                <input  id="username"  class="rounded  mx-3 mt-3 "  [readOnly]="true" />
+                <label htmlFor="username" class="pt-3 px-3">client type</label>
+            </span>
+            <span class="p-float-label">
+                <input  id="username" class="rounded  mx-2 mt-3 "  [readOnly]="true"/>
+                <label  class="pt-3 px-3">client classes</label>
+            </span>
+        </div>
+        <div class="d-flex mt-3 border-0 ">
+            <div class=" mx-3 p-float-label">
+              
+              <input type="text"
+              [readOnly]="true"
+                     class="form-control  text-black"
+                     bsDatepicker
+                     [bsConfig]="{ adaptivePosition: true }"
+                     [(ngModel)]="payorPlanItem.fromDateString">
+                  
             </div>
-                <span class="p-float-label">
-                    <textarea id="float-input" rows="3" cols="61" class="rounded mt-4 mx-3"></textarea>
-                    <label class="pt-4 mx-3">Summary</label>
-                </span>
-            <div class="d-flex">
-                <span class="p-float-label">
-                    <input  id="username"  class="rounded  mx-3 mt-3 " />
-                    <label htmlFor="username" class="pt-3 px-3">client type</label>
-                </span>
-                <span class="p-float-label">
-                    <input  id="username" class="rounded  mx-2 mt-3 " />
-                    <label  class="pt-3 px-3">client classes</label>
-                </span>
-            </div>
-            <div class="d-flex mt-3 border-0 ">
-                <div class=" mx-3 p-float-label">
-                  <input type="text"
+            <div class="mx-2 p-float-label">
+              <input type="text"
+              [readOnly]="true"
+                     class="form-control text-black"
+                     bsDatepicker
+                     [bsConfig]="{ adaptivePosition: true }"
+                     [(ngModel)]="payorPlanItem.fromDateString">
                     
-                         class="form-control  "
-                         bsDatepicker
-                         [bsConfig]="{ adaptivePosition: true }">
-                         <label >Effective From</label>
-                </div>
-                <div class="mx-2 p-float-label">
-                  <input type="text"
-                       
-                         class="form-control "
-                         bsDatepicker
-                         [bsConfig]="{ adaptivePosition: true }">
-                         <label class="px-2">Effective To</label>
-                </div>
-              </div>
-            <label class="text-secondary mx-3 mt-3 private-duty fw-bold">Private Duty</label>
-              <a class=" form-switch" >  <input class="form-check-input mt-3 text-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"  checked 
-                style="width: 50px; " disabled></a>
-              <div class="text-white   mt-4 mb-2 mx-3">
-                <button type="button" class="text-white  w-25 bg-black  btt" (click)="cancel()" > <i class="pi pi-times"></i>Cancel</button>
             </div>
-            </div>
-        </fieldset>
-    </form>
+          </div>
+        <label class="text-secondary mx-3 mt-3 private-duty fw-bold">Private Duty</label>
+          <a class=" form-switch" >  <input class="form-check-input mt-3 text-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"  checked 
+            style="width: 50px; " disabled></a>
+          <div class="text-white   mt-4 mb-2 mx-3">
+            <button type="button" class="text-white  w-25 bg-black  btt" (click)="cancel()" > <i class="pi pi-times mx-1"></i>Cancel</button>
+        </div>
+        </div>
 </div>     
  </p-tabPanel>
 
@@ -269,13 +254,21 @@
 
 
  <p-tabPanel header="Payor/Plan Service">
-    <p-dropdown [options]="options" [(ngModel)]="selectedOption"></p-dropdown>
-    <div *ngIf="selectedOption === 'Form1'; else form2">
-        <p>Please select site to view or edit the data</p>
-      </div>
-      <ng-template #form2>
-        <div *ngIf="selectedOption === 'Form2' else noFormSelected">
-            <form action="" class="container  con-input mt-3 ">
+    <span class="p-float-label">
+        <p-dropdown [autoDisplayFirst]="false" 
+        [filter]="true" filterBy="UserOfficeList" 
+        [options]="UserOfficeList"
+          [(ngModel)]="UserOfficeList.name" 
+          [virtualScroll]="true" [itemSize]="30" 
+          optionValue="id" 
+          optionLabel="name" class="w-50"
+          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form">
+        </p-dropdown>
+        <label for="dropdown" class="color-black">Site</label>
+      </span>
+      <!-- <p *ngIf="payorplanserviceForm" class="mt-2 ml-4 font-weight-bold mb-0 f-16">Please select site to view or
+        edit the data</p>
+            <form action="" class="container  con-input mt-3 " *ngIf="!payorplanserviceForm">
                 <fieldset>
                     <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
                         <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
@@ -335,12 +328,8 @@
                   </div>
                     </div>
                 </fieldset>
-            </form> 
-        </div>
-      </ng-template>
-      <ng-template #noFormSelected>
-        <p>Please select site to view or edit the data</p>
-      </ng-template>
+            </form>  -->
+       
      </p-tabPanel>    
 
 
@@ -351,17 +340,18 @@
 
 
  <p-tabPanel header="Sandata Payor/Plan Service">
-<p-dropdown [options]="options" [(ngModel)]="selectedOption"></p-dropdown>
-<div *ngIf="selectedOption === 'Form1'; then form1 "></div>
-<div *ngIf="selectedOption === 'Form3'; then form3 "></div>
-<ng-template #form1>
-    <p>Please select site to view or edit the data</p>
-</ng-template>
-<ng-template #form2>
-    <p>Please select site to view or edit the data</p>
-</ng-template>
-<ng-template #form3>
-    <form action="" class="container in-field mt-3">
+    <span class="p-float-label">
+        <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList" [options]="UserOfficeList"
+          [(ngModel)]="UserOfficeList.name" [virtualScroll]="true" [itemSize]="30" optionValue="id" (click)="PayorPlanService('payorplanserviceForm' )"
+          optionLabel="name" class="w-50"
+          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form">
+        </p-dropdown>
+        <label for="dropdown" class="color-black">Site</label>
+      </span>
+      <!-- <p *ngIf="payorplanserviceForm" class="mt-2 ml-4 font-weight-bold mb-0 f-16">Please select site to view or
+        edit the data</p>
+
+    <form action="" class="container in-field mt-3" *ngIf="SandataPayorPlan">
         <fieldset>
             <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
                 <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> Sandata Payor/Plan Service  </p>
@@ -424,8 +414,8 @@
                 </tbody>
             </table>
         </div>
-      </div>
-</ng-template>
+      </div> -->
+
  </p-tabPanel>
             
   </p-tabView> 
@@ -558,6 +548,9 @@
         </div>
     </div>
 
+
+
+ 
 </div>
 
 

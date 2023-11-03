@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-testing',
@@ -6,44 +7,50 @@ import { Component } from '@angular/core';
   styleUrls: ['./testing.component.scss']
 })
 export class TestingComponent {
-  ingredient!: string;
-   checked: boolean = false;
-
-   isDropdownOpen = false;
-
-   toggleDropdown() {
-     this.isDropdownOpen = !this.isDropdownOpen;
-   }
-
-
-
-   countriess: any[] | undefined;
-
-   selectedCountrys: any | undefined;
-
-   
-
-   
   countries: any[] | undefined;
 
-  selectedCountry: any | undefined;
+  selectedCountry: any 
 
   ngOnInit() {
       this.countries = [
-          { name: 'CN COT AAA(72084)' },
-          { name: 'CN COT ADOPTION SUBSIDY(720)' },
-          { name: 'CN COT NARBHA(72087)'},
-          { name: 'CN COTTONWOOD DDD(72013)' },
-          { name: 'CN COTTONWOOD EVERCARE(72)' },
-          { name: 'Germany' },
-          { name: 'India'},
-          { name: 'Japan' },
-          { name: 'Spain' },
-          { name: 'United States' }
+          { name: 'Australia', code: 'AU' },
+          { name: 'Brazil', code: 'BR' },
+          { name: 'China', code: 'CN' },
+          { name: 'Egypt', code: 'EG' },
+          { name: 'France', code: 'FR' },
+          { name: 'Germany', code: 'DE' },
+          { name: 'India', code: 'IN' },
+          { name: 'Japan', code: 'JP' },
+          { name: 'Spain', code: 'ES' },
+          { name: 'United States', code: 'US' }
       ];
-      this.countriess = [
-          
-      ];
+
+
+
+
+
+
+
+
+      this.getPayorPlanList();
+      this. getUserOfficeList()
+      this.items = Array.from({ length: 30 }).map((_, i) => `Item #${i}`);
+   
+      this.payorPlanItem =
+      {
+        id: null,
+        clientClassId:null,
+        clientClassList:'',
+        clientTypeList:'',
+        description:'',
+        fromDateString:'',
+        payorCode:null,
+        payorId:null,
+        plan:'',
+        planCode:null,
+        privateDuty:null,
+        toDateString:'',
+      }
   }
 
 
@@ -51,30 +58,168 @@ export class TestingComponent {
 
 
 
-  first1: number = 0;
-
-  rows1: number = 10;
-
-  first2: number = 0;
-
-  rows2: number = 10;
-
-  first3: number = 0;
-
-  rows3: number = 10;
-
-  totalRecords: number = 120;
-
-  options = [
-      { label: 5, value: 5 },
-      { label: 10, value: 10 },
-      { label: 20, value: 20 },
-      { label: 120, value: 120 }
-  ];
-
- 
 
 
 
+
+
+
+
+
+
+
+
+
+  constructor(private api:ApiService){}
+  payorplan=true;
+  payload=false;
+  onClick(item:any){
+    this.payorplan=false;
+    this.payload=true;
+
+    this.payorPlanItem = item;
+    this.editPayorPlanServiceFlag = true;
+    this.editSandataServiceFlag = true;
+    this.editPayorPlanServiceSite = null;
+    this.editSandataServiceSite = null;
+    this.activeIndex=0
+    // console.log(item,this.payorPlanItem);
   
+  }
+
+  cancel(){
+    this.payorplan=true;
+    this.payload=false;
+  }
+
+
+
+  ingredient!: string;
+   checked: boolean = false;
+   isDropdownOpen = false;
+
+   toggleDropdown() {
+     this.isDropdownOpen = !this.isDropdownOpen;
+   }
+
+
+   loginfailed=false;
+
+
+
+
+   countriess: any[] | undefined;
+   selectedCountrys: any | undefined;
+
+   
+
+
+
+
+public payorPlanList:any=[];
+public planName:any;
+public payorCode=''
+public privateDuty='';
+public planCode=''
+public lowerBound: number = 1;
+public upperBound: number = 20;
+public payorPlanItem:any;
+public editFlag:boolean=true;
+public editFormMapFlag:boolean=false;
+public editPayorPlanServiceFlag:boolean=true;
+public editSandataServiceFlag:boolean=true;
+public editPayorPlanServiceSite:any;
+public editSandataServiceSite:any;
+public activeIndex:any;
+
+
+public getPayorPlanList() {
+     let obj = { 
+      "id": "", 
+      "plan": this.planName, 
+      "planCode": this.planCode, 
+      "payorCode": this.payorCode, 
+      "privateDuty":this.privateDuty, 
+      "lowerBound": this.lowerBound, 
+      "upperBound": this.upperBound 
+    }
+    //  console.log(obj);
+
+     this.api.getPayorPlanList(JSON.stringify(obj)).subscribe(res => {
+       this.payorPlanList = res;
+        // console.log(res);
+   
+     })
+   }
+
+   public UserOfficeList:any;
+      public getUserOfficeList()  {
+         this.api.getUserOfficeList().subscribe(res => {
+         this.UserOfficeList = res;
+   console.log(res);
+
+})
+  }
+
+
+// options: any[] = [
+
+//   { label: 'Form 1', value: 'Form1' },
+//   { label: 'Form 2', value: 'Form2' },
+//   { label: 'Form 3', value: 'Form3' }
+// ];
+
+// selectedOption: string = '';
+
+
+cncot=false;
+OnClick(){
+  this.cncot=true;
 }
+
+
+
+VisitReview=false;
+OnSubmit(){
+ this. VisitReview=true;
+}
+onsubmit(){
+  this.VisitReview=false;
+}
+
+
+
+
+items!: string[];
+
+
+payorplanserviceForm=false
+SandataPayorPlan=false
+PayorPlanService(flag: any){
+  if(flag=='payorplanserviceForm'){
+    this.UserOfficeList(this.payorplanserviceForm)
+    this.payorplanserviceForm=true;
+  }else if(flag=='editSandataServiceFlag'){
+    this.UserOfficeList()
+    this.SandataPayorPlan=false;
+  }
+
+}
+
+
+
+
+}
+
+
+
+
+interface Item {
+  payorCode: number;
+  planCode: string;
+  plan: string;
+  fromDateString: string;
+  toDateString: string;
+}
+  
+

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poc-login',
@@ -7,18 +8,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./poc-login.component.scss']
 })
 export class PocLoginComponent {
-  isFormInvalid = false;
-  studentForm: any;
-  onSubmit() {
-   if(this.studentForm.valid){
-        this.studentForm.reset();
-      }
-      // this.dataarray.push(this.studentForm.value);
+  constructor(private _formBuilder: FormBuilder, public router:Router){ }
 
+  errorMessage = 'Invalid Credentials';
+  invalidLogin = false;
+  issubmitted = false;
 
-     else {
-      this.isFormInvalid = true;
-    }
+  ngOnInit(): void { }
   
-}
+  public loginForm = this._formBuilder.group({
+
+    email: ['', Validators.required],
+    password: ['', Validators.required]
+  })
+
+  submitLogin(values:any){
+    if(this.loginForm.valid){
+      const isEmailExist = (values.email == 'administrator' && values.password == 'louisville')
+      if(isEmailExist){
+        this.router.navigate(['/login'])
+      } else {
+        // this.invalidLogin = true;
+        this.loginfailed=true;
+      }
+  
+    }else {
+      this.issubmitted=true
+    }
+  }
+
+
+  loginfailed=false;
+  Ok(){
+    this.loginfailed=false;
+  }
 }
