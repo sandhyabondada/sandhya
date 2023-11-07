@@ -18,4 +18,8 @@ export class ApiService {
   public getUserOfficeList(): Observable<any> {
     return this.http.get(`http://192.168.10.178:7002/poclite/common/getUserOfficeList?jsonObj={"userId":1}`);
   }
+
+  public getPayorPlanServiceList(obj:any): Observable<any> {
+    return this.http.get('http://192.168.10.178:7002/poclite/maintenance/getPayorPlanServiceList?jsonObj='+ obj);
+  }
 }

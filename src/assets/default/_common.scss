@@ -45,5 +45,8 @@
     font-weight: 500;
    }  
 
-
+    button{
+      @include border-radius(3px, 8px, 3px, 8px);
+      background-color:   #76bd43;
+    }
 

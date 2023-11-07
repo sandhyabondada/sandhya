@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-visit-review',
@@ -16,5 +16,14 @@ export class VisitReviewComponent {
           { name: 'No' },
          
       ];
+  }
+
+
+
+  constructor(private renderer: Renderer2) { }
+
+  openModal() {
+    const modal = document.getElementById('myModal');
+    this.renderer.addClass(modal, 'show');
   }
 }

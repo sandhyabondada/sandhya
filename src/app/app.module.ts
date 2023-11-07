@@ -14,7 +14,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { TabViewModule } from 'primeng/tabview';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { PaginatorModule } from 'primeng/paginator';
-
+import { TooltipModule } from 'primeng/tooltip';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -66,7 +67,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TabViewModule,
     TreeSelectModule,
     PaginatorModule,
-    
+    TooltipModule,
+    MultiSelectModule,
     BsDatepickerModule.forRoot()
 
   ],

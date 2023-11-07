@@ -11,9 +11,10 @@
         @include border-radius(0px, 10px, 0px, 10px);
         height: 37px;
         width: 60px;
-        background-color: rgb(54, 213, 115);
+     
+        background-color:   #76bd43;
         outline: none;
-        border: 1px solid rgb(21, 117, 58);
+        border: 1px solid #76bd43;
     }
     .search-btn{
         margin-left: 60px !important;
@@ -144,4 +145,8 @@
   z-index: 1;
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+.hoverr :hover{
+  color: blue !important;
 }

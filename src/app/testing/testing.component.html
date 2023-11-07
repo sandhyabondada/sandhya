@@ -1,119 +1,118 @@
 
 
 
-<div class=" flex justify-content-center">
-    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
-        <ng-template pTemplate="selectedItem">
-            <div class="flex align-items-center gap-2" >
-               
-                <div>{{ selectedCountry.name }}</div>
-            </div>
-        </ng-template>
-        <ng-template let-country pTemplate="item">
-            <div class="flex align-items-center gap-2">
-               
-                <div>{{ country.name }}</div>
-            </div>
-        </ng-template>
-    </p-dropdown>
-</div>
+<button type="button" class="text-white  w-25 bg-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal1"> 
+    <i class="pi pi-save px-1"></i>Save</button>
+  
 
-
-
-<p-tabView>
-<p-tabPanel header="Payor/Plan Service">
-    <span class="p-float-label">
-        <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList" [options]="UserOfficeList"
-          [(ngModel)]="UserOfficeList.name" [virtualScroll]="true" [itemSize]="30" optionValue="id" (click)="PayorPlanService('payorplanserviceForm' )"
-          optionLabel="name" class="w-50"
-          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form">
-        </p-dropdown>
-        <label for="dropdown" class="color-black">Site</label>
-      </span>
-      <!-- <p *ngIf="payorplanserviceForm" class="mt-2 ml-4 font-weight-bold mb-0 f-16">Please select site to view or
-        edit the data</p>
-            <form action="" class="container  con-input mt-3 " *ngIf="!payorplanserviceForm">
-                <fieldset>
-                    <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
-                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
-                  
-                    <div class="d-flex ">
-                        <span class="p-float-label">
-                            <input id="username" class="rounded mx-4  mt-3 bg-secondary" disabled/>
-                            <label htmlFor="username" class="pt-3 px-4 text-white">Service </label>
-                        </span>
-                        <span class="p-float-label">
-                            <input id="username" class="rounded  mx-2 mt-3 " />
-                            <label class="pt-3 px-3">Pay Rate</label>
-                        </span>
-                    </div>
-                    <div class="d-flex mt-3 border-0 ">
-                        <div class=" mx-4 p-float-label">
-                          <input type="text"
-                            
-                                 class="form-control  "
-                                 bsDatepicker
-                                 [bsConfig]="{ adaptivePosition: true }">
-                                 <label >Effective From</label>
+    <div class="modal fade" id="exampleModal1" 
+    data-bs-backdrop="static" data-bs-keyboard="false" 
+    tabindex="-1" aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-body       ">
+                    <div class=" w-100   ">
+                        <div class="d-flex justify-content-between bg-black text-white  px-2 fs-5  pt-2">
+                            <p class="fs-5">Visit Review Attributes</p>
+                            <i><i class="pi pi-times"  data-bs-dismiss="modal"></i></i>
                         </div>
-                        <div class="mx-2 p-float-label">
-                          <input type="text"
-                               
-                                 class="form-control "
-                                 bsDatepicker
-                                 [bsConfig]="{ adaptivePosition: true }">
-                                 <label class="px-2">Effective To</label>
-                        </div>
-                      </div>
-                    <div class="d-flex mx-4 inputswitch">
-                        <div>
-                            <label class=" mx-3 mt-3 private-duty">Facility Type</label>
-                            <div class=" justify-content-center mx-4 ">
-                                <a class=" form-switch "> <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
-                                        checked></a>
+                        <div class="d-flex justify-content-between text-black pt-2 ">
+                            <p>Does Payor Provide a Timesheet that is  Required?</p>
+                            <div class=" text-secondary">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
                             </div>
                         </div>
-                        <div class="switch">
-                            <label class="  mt-3 private-duty">Allow  Double Booking</label>
-                            <div class=" justify-content-center mx-2 ">
-                                <a class=" form-switch"> <input class="form-check-input mt-3 check" type="checkbox" value="yes "
-                                        checked></a>
+                        <div class="d-flex justify-content-between text-black ">
+                            <p>PS Daily Signature Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>DCS Daily Signature Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>PS Weekly Signature Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>DCS Weekly Signature Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>Tasks Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>Progress Notes Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black  ">
+                            <p>Supervisor Sign off Required?</p>
+                            <div class="text-secondary pb-2">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-black ">
+                            <p>Documentation Required to be sent to Hub/Payor?</p>
+                            <div class=" text-secondary">
+                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
+                                    <option selected=""class="text-black">Select</option>
+                                    <option value="1" class="text-black">Yes</option>
+                                    <option value="2" class="text-black">No</option>
+                                  </select>
                             </div>
                         </div>
                     </div>
-                    <span class="p-float-label mx-4 mt-1">
-                        <input id="username" class="rounded  mx-3 mt-3 " />
-                        <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
-                    </span> 
-                  <div class="mt-4 mx-4 mb-2">
-                    <button type="button" class="text-white  w-25 bg-black mx-2"> <i class="pi pi-times px-1"></i>Cancel</button>
-                    <button type="button" class="text-white  w-25 bg-primary mx-2">Reset</button>
-                    <button type="button" class="text-white  w-25 bg-success mx-2"> <i class="pi pi-save px-1"></i>Save</button>
-                  </div>
-                    </div>
-                </fieldset>
-            </form>  -->
-       
-     </p-tabPanel> 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </p-tabView>
-
-
-
-
-
+               </div> 
+          </div>
+        </div>
+      </div>
+ 
 
 
 
