@@ -28,121 +28,129 @@
 <!-- container1 finished -->
 <div class=" d-flex payor ">
     <div>
-    <div class="  mt-1 bg-primary w-100 container mx-4 private  ">
-        <div class="d-flex col-md-8  pt-4  ">
-            <div class="  justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username"  [(ngModel)]=" payorCode " class="Small shadow"/>
-                    <label htmlFor="username" class="text-white">Payor Code</label>
-                </span>
-            </div>
-            <div class=" justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username"  [(ngModel)]="planCode" class="Small shadow"/>
-                    <label htmlFor="username" class="text-white">Plan Code</label>
-                </span>
-            </div>
-            <div class="  justify-content-center px-2">
-                <span class="p-float-label">
-                    <input pInputText id="username" [(ngModel)]="planName" class="Small shadow"/>
-                    <label htmlFor="username" class="text-white">Plan Name</label>
-                </span>
-            </div>
-        </div>
-        <div class="d-flex justify-content-between">
-            <div class=" ">
-                <div class="d-flex mx-3 mt-3 text-white">
-                    <div class="flex align-items-center ">
-                        <p>Private Duty</p>
-                    </div>
-                    <div class="flex align-items-center mx-3 ">
-                        <p-radioButton name="pizza" [value]="2"  [(ngModel)]="ingredient"
-                            inputId="ingredient1" ></p-radioButton>
-                        <label for="ingredient1" class="mx-1">All</label>
-                    </div>
-                    <div class="flex align-items-center mx-3">
-                        <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient"
-                            inputId="ingredient2"></p-radioButton>
-                        <label for="ingredient2" class="mx-1">Yes</label>
-                    </div>
-                    <div class="flex align-items-center mx-3">
-                        <p-radioButton name="pizza" value="Pepper" [(ngModel)]="ingredient"
-                            inputId="ingredient3"></p-radioButton>
-                        <label for="ingredient3" class="mx-1">No</label>
-                    </div>
+        <div class="  mt-1 bg-primary w-100 container mx-4 private  ">
+            <div class="d-flex col-md-8  pt-4  ">
+                <div class="  justify-content-center px-2">
+                    <span class="p-float-label">
+                        <input pInputText id="username"  [(ngModel)]=" payorCode " class="Small shadow" />
+                        <label htmlFor="username" class="text-white">Payor Code</label>
+                    </span>
+                </div>
+                <div class=" justify-content-center px-2">
+                    <span class="p-float-label">
+                        <input pInputText id="username"  [(ngModel)]="planCode" class="Small shadow"/>
+                        <label htmlFor="username" class="text-white">Plan Code</label>
+                    </span>
+                </div>
+                <div class="  justify-content-center px-2">
+                    <span class="p-float-label">
+                        <input pInputText id="username" [(ngModel)]="planName" class="Small shadow"/>
+                        <label htmlFor="username" class="text-white">Plan Name</label>
+                    </span>
                 </div>
             </div>
-            <div class="text-white m-2 search-btn ">
-                <button type="button" class="text-white mx-1 "> <i class="pi pi-search  px-1 "  (click)="getPayorPlanList()"></i>Go</button>
-            </div> 
-        </div>
-    </div>
-    <div class="row mt-1  margin ">
-        <div class="   w-100 col-md-12 container">
-            <div class=" table-responsive">
-            <table class="table table-bordered ">
-                <thead class="thead-dark bg-black text-white " >
-                    <tr>
-                      <th class=" border-right sticky-top p-1 bg-black text-white"></th>
-                      <th class=" border-right sticky-top p-1 bg-black text-white">	Payor Code</th>
-                      <th class=" border-right  sticky-top p-1 bg-black text-white">Plan Code</th>
-                      <th class=" border-right sticky-top p-1 bg-black text-white">Plan Name</th>
-                      <th class=" border-right sticky-top p-1 bg-black text-white">Effective From</th>
-                      <th class=" border-right sticky-top p-1 bg-black text-white ">Effective To</th>
-                    </tr>
-                  </thead>
-                <tbody >
-                    <tr *ngFor="let item of payorPlanList">
-                        <td class="dropdown pen "> 
-                            <i class="pi pi-bars icon fw-bold"   (click)="toggleDropdown()"></i>
-                            <ul *ngIf="isDropdownOpen" class="dropdown-content m-2 hoverr">
-                              <li (click)="onClick(item)" class="pt-2 fw-semibold pointer ">
-                             <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
-                              <li class="pt-4  fw-semibold  pointer "  data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                <i class="pi pi-file  text-primary fw-bold me-2"></i>Visit Review Attributes</li>
-                            </ul>
-                        </td>
-                        <td>{{item.payorCode}}</td> 
-                        <td>{{item.planCode}}</td>
-                        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">{{item.plan}}</td>
-                        <td>{{item.fromDateString}}</td>
-                        <td>{{item.toDateString}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-
-        <div class="d-flex align-items-center justify-content-end pagination nav  mt-4 pt-3 ">
-            <div class=" pagination-add-close justify-content-end">
-              <span class="footer-text text-black fw-semibold px-2">Per Page</span>
-              <select (change)="pageReset()" [(ngModel)]="perPage" class="border border-1 p-0  shadow text-black fw-semibold" style="font-size: 13px;">
-                <option [ngValue]="10" >10</option>
-                <option [ngValue]="20">20</option>
-                <option [ngValue]="30">30</option>
-                <option [ngValue]="40">40</option>
-                <option [ngValue]="50">50</option>
-              </select>
-              <span class="mr-2 text-black fw-semibold">Showing {{totalCount>0?lowerBound:0}} to
-                {{totalCount>0?upperBound>=totalCount ?totalCount:upperBound:0}} of
-                {{totalCount}} </span>
-              <button type="button" [disabled]="lowerBound<=1" (click)="previousPage()"
-                class="pagination-btn btn next-btn primary-button mx-2 fw-medium text-white"
-                style="height: 30px;width: 50px;padding: 0;">Prev</button>
-              <button type="button" [disabled]="upperBound>=totalCount" (click)="nextPage()"
-                class="pagination-btn btn next-btn primary-button mx-2 text-white fw-medium"
-                style="height: 30px;width: 50px;padding: 0;">Next</button>
+            <div class="d-flex justify-content-between">
+                <div class=" ">
+                    <div class="d-flex mx-3 mt-3 text-white">
+                        <div class="flex align-items-center ">
+                            <p>Private Duty</p>
+                        </div>
+                        <div class="flex align-items-center mx-3 ">
+                            <p-radioButton name="pizza" [value]="2"  [(ngModel)]="privateDuty"
+                                inputId="ingredient1" ></p-radioButton>
+                            <label for="ingredient1" class="mx-1">All</label>
+                        </div>
+                        <div class="flex align-items-center mx-3">
+                            <p-radioButton name="pizza" value="1" [(ngModel)]="privateDuty"
+                                inputId="ingredient2"></p-radioButton>
+                            <label for="ingredient2" class="mx-1">Yes</label>
+                        </div>
+                        <div class="flex align-items-center mx-3">
+                            <p-radioButton name="pizza" value="0" [(ngModel)]="privateDuty"
+                                inputId="ingredient3"></p-radioButton>
+                            <label for="ingredient3" class="mx-1">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white m-2 search-btn ">
+                    <button type="button" class="text-white mx-1 "> <i class="pi pi-search  px-1 "  (click)="getPayorPlanList()"></i>Go</button>
+                </div> 
             </div>
-          </div>
         </div>
+        <div class="row mt-1  margin ">
+            <div class="   w-100 col-md-12 container">
+                <div class=" table-responsive shadow" >
+                <table class="table table-bordered " >
+                    <thead class="thead-dark bg-black text-white " >
+                        <tr>
+                        <th class=" border-right sticky-top p-1 bg-black text-white"></th>
+                        <th class=" border-right sticky-top p-1 bg-black text-white">	Payor Code</th>
+                        <th class=" border-right  sticky-top p-1 bg-black text-white">Plan Code</th>
+                        <th class=" border-right sticky-top p-1 bg-black text-white">Plan Name</th>
+                        <th class=" border-right sticky-top p-1 bg-black text-white">Effective From</th>
+                        <th class=" border-right sticky-top p-1 bg-black text-white ">Effective To</th>
+                        </tr>
+                    </thead>
+                    <tbody  >
+                        <tr *ngFor="let item of payorPlanList" >
+                            <td class="dropdown pen" > 
+                                <i class="pi pi-bars icon fw-bold" (click)="toggleDropdown()" ></i>
+                                <ul *ngIf="isDropdownOpen" class="dropdown-content  hoverr" >
+                                <li (click)="onClick(item)" class="pt-2 fw-semibold pointer ">
+                                <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
+                                <li class="pt-4  fw-semibold  pointer "  data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                    <i class="pi pi-file  text-primary fw-bold me-2"></i>Visit Review Attributes</li>
+                                </ul>
+                            </td>
+                            <td>{{item.payorCode}}</td> 
+                            <td>{{item.planCode}}</td>
+                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">{{item.plan}}</td>
+                            <td>{{item.fromDateString}}</td>
+                            <td>{{item.toDateString}}</td>
+                        </tr>
+                        
+                    </tbody>
+                    <div *ngIf="payorPlanList.length==0" class="d-flex align-items-center justify-content-between">
+                        <h5 >
+                            No Data Found
+                        </h5>
+                    </div>
+                </table>
+                <!-- <p class="border border-2 bg-secondary text-black fw-bold text-center w-100 mt-3 p-2"
+                *ngIf="payorPlanList.length==0">No Data Found</p> -->
+            </div>
 
- 
+
+            <div class="d-flex align-items-center justify-content-end pagination nav  mt-4 pt-3 ">
+                <div class=" pagination-add-close justify-content-end">
+                <span class="footer-text text-black fw-semibold px-2">Per Page</span>
+                <select (change)="pageReset()" [(ngModel)]="perPage" class="border border-1 p-0  shadow text-black fw-semibold" style="font-size: 13px;">
+                    <option [ngValue]="10" >10</option>
+                    <option [ngValue]="20">20</option>
+                    <option [ngValue]="30">30</option>
+                    <option [ngValue]="40">40</option>
+                    <option [ngValue]="50">50</option>
+                </select>
+                <span class="mr-2 text-black fw-semibold">Showing {{totalCount>0?lowerBound:0}} to
+                    {{totalCount>0?upperBound>=totalCount ?totalCount:upperBound:0}} of
+                    {{totalCount}} </span>
+                <button type="button" [disabled]="lowerBound<=1" (click)="previousPage()"
+                    class="pagination-btn btn next-btn primary-button mx-2 fw-medium text-white bg-secondary"
+                    style="height: 30px;width: 50px;padding: 0;">Prev</button>
+                <button type="button" [disabled]="upperBound>=totalCount" (click)="nextPage()"
+                    class="pagination-btn btn next-btn primary-button mx-2 text-white fw-medium"
+                    style="height: 30px;width: 50px;padding: 0;">Next</button>
+                </div>
+            </div>
+            </div>
+
+    
+        </div>
     </div>
-</div>
     <!-- container2 finished -->
 
 
-     <div class="col-md-4  container box-shadow shadow mb-5 bg-white  data" *ngIf="payorplan">
+    <div class="col-md-4  container box-shadow shadow mb-5 bg-white  data" *ngIf="payorplan">
             <div class="text-white fs-5 px-3 bg-primary mt-1 ">
                 <p class="p-1">Payor/Plan</p>
             </div>
@@ -259,7 +267,7 @@
  
         <div *ngIf="PayorPlanServiceFlagData">
             <form action="" class="container  con-input mt-3 " >
-                <fieldset>
+              
                     <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
                         <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center " 
                         style="font-size: 12px;"> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
@@ -319,9 +327,15 @@
                     <button type="button" class="text-white  w-25 bg-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
                         <i class="pi pi-save px-1"></i>Save</button>
                   </div>
+                 
                     </div>
-                </fieldset>
+                    <p class="border border-2 bg-secondary text-black fw-bold text-center ">No Data Found</p>
+                
+                
             </form> 
+            
+                
+            
         </div>
   
      </p-tabPanel>    
@@ -398,7 +412,7 @@
     </form>
     <div class="d-flex mt-2 shadow" *ngIf="SanDataPayorPlanServiceFlagDetails">
         <div class=" container  ">
-            <table class="table table-bordered ">
+            <table class="table  table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>Service </th>
@@ -407,12 +421,16 @@
                         <th>Effective To </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
+              <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+              </tbody>
+                    
+                
+              
             </table>
+            <p class="border border-2 bg-secondary text-black fw-bold text-center w-100 " style="margin-top: -25px;">No Data Found</p>
         </div>
       </div>
 
@@ -440,7 +458,7 @@
             </div>
             <div class="modal-body">
                     <div class=" w-100">
-                        <div class="d-flex justify-content-between text-black pt-2 ">
+                        <div class="d-flex justify-content-between text-black  ">
                             <p>Does Payor Provide a Timesheet that is  Required?</p>
                             <div class=" text-secondary">
                                 <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
@@ -529,7 +547,15 @@
                                     <option value="2" class="text-black">No</option>
                                   </select>
                             </div>
+                           
                         </div>
+                        <div class=" modal-footer d-flex justify-content-between">
+                            <button type="button" class="text-white   bg-black mx-2 " style="width: 100px;"
+                            data-bs-dismiss="modal"> <i class="pi pi-times px-1"></i>Close</button>
+                          
+                            <button type="button" class="text-white   bg-success mx-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
+                                <i class="pi pi-save px-1"></i>Save</button>
+                          </div>
                     </div>
                </div> 
           </div>

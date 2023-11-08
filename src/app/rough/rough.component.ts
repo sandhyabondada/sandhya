@@ -15,7 +15,7 @@ export class RoughComponent {
   public payorplan=true;
   public payload=false;
   public VisitReview=false;
-  public ingredient: any=2;
+  public ingredient: any;
   public checked: boolean = false;
   public isDropdownOpen = false;
   public cncot=false;
@@ -32,7 +32,7 @@ export class RoughComponent {
   public payorPlanList:any=[];
   public planName:any;
   public payorCode=''
-  public privateDuty='';
+  public privateDuty: any=2;
   public planCode=''
   public lowerBound: number = 1;
   public upperBound: number = 18;
