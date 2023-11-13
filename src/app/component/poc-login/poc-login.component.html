@@ -12,41 +12,39 @@
                     <input type="text"  class="w-100 border border-1 p-1 px-3"
                       formControlName="email"  value="administrator" />
                     </span>
-
+ 
                     <div *ngIf="(issubmitted && loginForm.controls['email'].invalid)">
                         <small class= "text-danger" *ngIf="loginForm.controls['email'].errors?.['required']" > UserID required </small>
                     </div>
                 </div>
-
-                <div class=" w-100 mt-4">
-                    <span class="p-input-icon-right w-100">
-                        <i class="pi pi-eye text-black fw-bold"></i>
-                        <input type="password" id="password" value="louisville" 
-                         class="w-100 border border-1 p-1 px-3"  formControlName="password"/>   
-                    </span>
-
+ 
+                    <div class="d-flex w-100 mt-4">
+                        <input type="{{ShowPassword ? 'text':'password'}}" class="form-control form-control-sm text-black fw-semibold p-1 px-3" id="exampleInputPassword" placeholder="Password" formControlName="password" autocomplete="off">
+                        <span *ngIf="ShowPassword==false" toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password pt-2" (click)="this.ShowPassword = !this.ShowPassword;" style="margin-left: -30px;"></span>
+                        <span *ngIf="ShowPassword==true" toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password pt-2" (click)="this.ShowPassword = !this.ShowPassword;" style="margin-left: -30px;"></span>
+                   </div>
                     <div *ngIf="(issubmitted && loginForm.controls['email'].invalid) || loginForm.controls['email'].touched">
                         <small class= "text-danger" *ngIf="loginForm.controls['password'].errors?.['required']" > password required </small>
                     </div>
-                </div>
-
+             
+ 
                 <div class="w-100 mt-4 ">
-                    <button type="button" class="btn w-100 text-white fw-medium" 
+                    <button type="button" class="btn w-100 text-white fw-medium"
                     (click)="submitLogin(loginForm.value)">Login</button>
-                  
+                 
                 </div>
-
+ 
                 <p class="mt-5 pt-5 ">Copyright @ 2020. Aquila Software Inc.</p>
-
+ 
                 <div class=""></div>
        
             </form>
 </div>
     </div>
-
-
-
-
+ 
+ 
+ 
+ 
     <div class="bg-white  px-5 pt-3 pb-3 text-center container position-absolute top-50 start-50 translate-middle rounded" style="width: 30%;"
     *ngIf="loginfailed">
         <i class="pi pi-times fs-1  text-danger border border-3  border-danger rounded-circle fw-bold p-2 mt-3"></i>

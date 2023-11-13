@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class PocLoginComponent {
   constructor(private _formBuilder: FormBuilder, public router:Router){ }
-
+ 
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
   issubmitted = false;
-
+ 
   ngOnInit(): void { }
-  
+ 
   public loginForm = this._formBuilder.group({
-
+ 
     email: ['', Validators.required],
     password: ['', Validators.required]
   })
-
+ 
   submitLogin(values:any){
     if(this.loginForm.valid){
       const isEmailExist = (values.email == 'administrator' && values.password == 'louisville')
@@ -31,15 +31,16 @@ export class PocLoginComponent {
         // this.invalidLogin = true;
         this.loginfailed=true;
       }
-  
+ 
     }else {
       this.issubmitted=true
     }
   }
-
-
+ 
+ 
   loginfailed=false;
   Ok(){
     this.loginfailed=false;
   }
+  ShowPassword=false
 }

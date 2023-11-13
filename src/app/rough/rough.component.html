@@ -2,50 +2,72 @@
 <div class=" bg-black p-1 position-relative">
     <div class=" d-flex justify-content-between  ">
         <div>
-            <i class="pi pi-bars text-white px-2 fs-5 pointer"></i>
+            <i class="pi pi-bars text-white px-2 fs-5 pointer">
+            </i>
             <img src="assets/icons/all-ways-caring-logo.png" alt="" height="40" class="mx-2 pointer">
         </div>
         <div>
             <img src=" assets\icons\Icon.svg" alt="" height="40">
-            <span class="text-white fs-4 ">Payor/Plan</span>
+            <span class="text-white fs-4 ">
+                Payor/Plan
+            </span>
         </div>
         <div>
-               <div class="dropdown-center mt-1">
-                    <button class="btn btn-black dropdown-toggle text-primary border-0" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="true">
-                        Administrator, Administrator
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"> <i class="pi pi-key px-2 text-secondary"></i>Change
-                                Password</a></li>
-                        <li><a class="dropdown-item" routerLink="/logout"><i class="pi pi-sign-out px-2 text-danger"></i>Log Out
-                        </a></li>
-                    </ul>
-                </div>
+            <div class="dropdown-center mt-1">
+                <button class="btn btn-black dropdown-toggle text-primary border-0" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="true">
+                    Administrator, Administrator
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="pi pi-key px-2 text-secondary">
+                            </i>
+                            Change Password
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/logout">
+                            <i class="pi pi-sign-out px-2 text-danger">
+                            </i>
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div> 
+    </div>
 </div>
 <!-- container1 finished -->
 <div class=" d-flex payor ">
     <div>
-        <div class="  mt-1 bg-primary w-100 container mx-4 private  ">
+        <div class="  mt-1 bg-primary w-100 container mx-4 private   ">
             <div class="d-flex col-md-8  pt-4  ">
                 <div class="  justify-content-center px-2">
                     <span class="p-float-label">
-                        <input pInputText id="username"  [(ngModel)]=" payorCode " class="Small shadow" />
-                        <label htmlFor="username" class="text-white">Payor Code</label>
+                        <input pInputText id="username" [(ngModel)]=" payorCode " class="Small shadow"
+                            style="background-color: hsl(210, 16%, 93%);" />
+                        <label htmlFor="username" class="text-secondary">
+                            Payor Code
+                        </label>
                     </span>
                 </div>
                 <div class=" justify-content-center px-2">
                     <span class="p-float-label">
-                        <input pInputText id="username"  [(ngModel)]="planCode" class="Small shadow"/>
-                        <label htmlFor="username" class="text-white">Plan Code</label>
+                        <input pInputText id="username" [(ngModel)]="planCode" class="Small shadow"
+                            style="background-color: hsl(210, 16%, 93%);" />
+                        <label htmlFor="username" class="text-secondary">
+                            Plan Code
+                        </label>
                     </span>
                 </div>
                 <div class="  justify-content-center px-2">
                     <span class="p-float-label">
-                        <input pInputText id="username" [(ngModel)]="planName" class="Small shadow"/>
-                        <label htmlFor="username" class="text-white">Plan Name</label>
+                        <input pInputText id="username" [(ngModel)]="planName" class="Small shadow"
+                            style="background-color: hsl(210, 16%, 93%);" />
+                        <label htmlFor="username" class="text-secondary">
+                            Plan Name
+                        </label>
                     </span>
                 </div>
             </div>
@@ -53,583 +75,646 @@
                 <div class=" ">
                     <div class="d-flex mx-3 mt-3 text-white">
                         <div class="flex align-items-center ">
-                            <p>Private Duty</p>
+                            <p>
+                                Private Duty
+                            </p>
                         </div>
                         <div class="flex align-items-center mx-3 ">
-                            <p-radioButton name="pizza" [value]="2"  [(ngModel)]="privateDuty"
-                                inputId="ingredient1" ></p-radioButton>
-                            <label for="ingredient1" class="mx-1">All</label>
+                            <p-radioButton name="pizza" [value]="2" [(ngModel)]="privateDuty" inputId="ingredient1">
+                            </p-radioButton>
+                            <label for="ingredient1" class="mx-1">
+                                All
+                            </label>
                         </div>
                         <div class="flex align-items-center mx-3">
-                            <p-radioButton name="pizza" value="1" [(ngModel)]="privateDuty"
-                                inputId="ingredient2"></p-radioButton>
-                            <label for="ingredient2" class="mx-1">Yes</label>
+                            <p-radioButton name="pizza" value="1" [(ngModel)]="privateDuty" inputId="ingredient2">
+                            </p-radioButton>
+                            <label for="ingredient2" class="mx-1">
+                                Yes
+                            </label>
                         </div>
                         <div class="flex align-items-center mx-3">
-                            <p-radioButton name="pizza" value="0" [(ngModel)]="privateDuty"
-                                inputId="ingredient3"></p-radioButton>
-                            <label for="ingredient3" class="mx-1">No</label>
+                            <p-radioButton name="pizza" value="0" [(ngModel)]="privateDuty" inputId="ingredient3">
+                            </p-radioButton>
+                            <label for="ingredient3" class="mx-1">
+                                No
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="text-white m-2 search-btn ">
-                    <button type="button" class="text-white mx-1 "> <i class="pi pi-search  px-1 "  (click)="getPayorPlanList()"></i>Go</button>
-                </div> 
+                    <button type="button" class="text-white mx-1 " (click)="getPayorPlanList()">
+                        <i class="pi pi-search   ">
+                        </i>
+                        Go
+                    </button>
+                </div>
             </div>
         </div>
         <div class="row mt-1  margin ">
             <div class="   w-100 col-md-12 container">
-                <div class=" table-responsive shadow" >
-                <table class="table table-bordered " >
-                    <thead class="thead-dark bg-black text-white " >
-                        <tr>
-                        <th class=" border-right sticky-top p-1 bg-black text-white"></th>
-                        <th class=" border-right sticky-top p-1 bg-black text-white">	Payor Code</th>
-                        <th class=" border-right  sticky-top p-1 bg-black text-white">Plan Code</th>
-                        <th class=" border-right sticky-top p-1 bg-black text-white">Plan Name</th>
-                        <th class=" border-right sticky-top p-1 bg-black text-white">Effective From</th>
-                        <th class=" border-right sticky-top p-1 bg-black text-white ">Effective To</th>
-                        </tr>
-                    </thead>
-                    <tbody  >
-                        <tr *ngFor="let item of payorPlanList" >
-                            <td class="dropdown pen" > 
-                                <i class="pi pi-bars icon fw-bold" (click)="toggleDropdown()" ></i>
-                                <ul *ngIf="isDropdownOpen" class="dropdown-content  hoverr" >
-                                <li (click)="onClick(item)" class="pt-2 fw-semibold pointer ">
-                                <i class="pi pi-pencil text-success fw-bold me-2"></i> Edit PayorPlan</li>
-                                <li class="pt-4  fw-semibold  pointer "  data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                    <i class="pi pi-file  text-primary fw-bold me-2"></i>Visit Review Attributes</li>
-                                </ul>
-                            </td>
-                            <td>{{item.payorCode}}</td> 
-                            <td>{{item.planCode}}</td>
-                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">{{item.plan}}</td>
-                            <td>{{item.fromDateString}}</td>
-                            <td>{{item.toDateString}}</td>
-                        </tr>
-                        
-                    </tbody>
-                    <div *ngIf="payorPlanList.length==0" class="d-flex align-items-center justify-content-between">
-                        <h5 >
-                            No Data Found
-                        </h5>
+                <div class=" table-responsive shadow">
+                    <table class="table table-bordered ">
+                        <thead class="thead-dark bg-black text-white ">
+                            <tr>
+                                <th class=" border-right sticky-top p-1 bg-black text-white"></th>
+                                <th class=" border-right sticky-top p-1 bg-black text-white"> Payor Code</th>
+                                <th class=" border-right  sticky-top p-1 bg-black text-white">Plan Code</th>
+                                <th class=" border-right sticky-top p-1 bg-black text-white">Plan Name</th>
+                                <th class=" border-right sticky-top p-1 bg-black text-white">Effective From</th>
+                                <th class=" border-right sticky-top p-1 bg-black text-white ">Effective To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of payorPlanList">
+                                <td class="dropdown pen">
+                                    <i class="pi pi-bars icon fw-bold" (click)="toggleDropdown()">
+                                    </i>
+                                    <ul *ngIf="isDropdownOpen" class="dropdown-content  hoverr">
+                                        <li (click)="onClick(item)" class="pt-2 fw-semibold pointer ">
+                                            <i class="pi pi-pencil text-success fw-bold me-2">
+                                            </i>
+                                            Edit PayorPlan
+                                        </li>
+                                        <li class="pt-4  fw-semibold  pointer " data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal1">
+                                            <i class="pi pi-file  text-primary fw-bold me-2">
+                                            </i>
+                                            Visit Review Attributes
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>{{item.payorCode}}</td>
+                                <td>{{item.planCode}}</td>
+                                <td
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
+                                    {{item.plan}}</td>
+                                <td>{{item.fromDateString}}</td>
+                                <td>{{item.toDateString}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="border border-2  text-black fw-bold text-center w-100 mt-3 p-2"
+                        style="background-color: hsl(210, 16%, 93%);" *ngIf="payorPlanList.length==0">No Data Found
+                    </p>
+                </div>
+                <div class="d-flex align-items-center justify-content-end pagination nav   pt-2 ">
+                    <div class=" pagination-add-close justify-content-end">
+                        <span class="footer-text text-black fw-semibold px-2">
+                            Per Page
+                        </span>
+                        <select (change)="pageReset()" [(ngModel)]="perPage"
+                            class="border border-1 p-0  shadow text-black fw-semibold" style="font-size: 13px;">
+                            <option [ngValue]="10">10</option>
+                            <option [ngValue]="20">20</option>
+                            <option [ngValue]="30">30</option>
+                            <option [ngValue]="40">40</option>
+                            <option [ngValue]="50">50</option>
+                        </select>
+                        <span class="mr-2 text-black fw-semibold">Showing {{totalCount>0?lowerBound:0}} to
+                            {{totalCount>0?upperBound>=totalCount ?totalCount:upperBound:0}} of
+                            {{totalCount}}
+                        </span>
+                        <button type="button" [disabled]="lowerBound<=1" (click)="previousPage()"
+                            class="pagination-btn btn next-btn primary-button mx-2 fw-medium text-white bg-secondary"
+                            style="height: 30px;width: 50px;padding: 0;">
+                            Prev
+                        </button>
+                        <button type="button" [disabled]="upperBound>=totalCount" (click)="nextPage()"
+                            class="pagination-btn btn next-btn primary-button mx-2 text-white fw-medium"
+                            style="height: 30px;width: 50px;padding: 0;">
+                            Next
+                        </button>
                     </div>
-                </table>
-                <!-- <p class="border border-2 bg-secondary text-black fw-bold text-center w-100 mt-3 p-2"
-                *ngIf="payorPlanList.length==0">No Data Found</p> -->
-            </div>
-
-
-            <div class="d-flex align-items-center justify-content-end pagination nav  mt-4 pt-3 ">
-                <div class=" pagination-add-close justify-content-end">
-                <span class="footer-text text-black fw-semibold px-2">Per Page</span>
-                <select (change)="pageReset()" [(ngModel)]="perPage" class="border border-1 p-0  shadow text-black fw-semibold" style="font-size: 13px;">
-                    <option [ngValue]="10" >10</option>
-                    <option [ngValue]="20">20</option>
-                    <option [ngValue]="30">30</option>
-                    <option [ngValue]="40">40</option>
-                    <option [ngValue]="50">50</option>
-                </select>
-                <span class="mr-2 text-black fw-semibold">Showing {{totalCount>0?lowerBound:0}} to
-                    {{totalCount>0?upperBound>=totalCount ?totalCount:upperBound:0}} of
-                    {{totalCount}} </span>
-                <button type="button" [disabled]="lowerBound<=1" (click)="previousPage()"
-                    class="pagination-btn btn next-btn primary-button mx-2 fw-medium text-white bg-secondary"
-                    style="height: 30px;width: 50px;padding: 0;">Prev</button>
-                <button type="button" [disabled]="upperBound>=totalCount" (click)="nextPage()"
-                    class="pagination-btn btn next-btn primary-button mx-2 text-white fw-medium"
-                    style="height: 30px;width: 50px;padding: 0;">Next</button>
                 </div>
             </div>
-            </div>
-
-    
         </div>
     </div>
     <!-- container2 finished -->
-
-
-    <div class="col-md-4  container box-shadow shadow mb-5 bg-white  data" *ngIf="payorplan">
-            <div class="text-white fs-5 px-3 bg-primary mt-1 ">
-                <p class="p-1">Payor/Plan</p>
-            </div>
+   
+ <div class="col-md-4  container box-shadow shadow mb-5 bg-white  data" *ngIf="payorplan">
+        <div class="text-white fs-5 px-3 bg-primary mt-1 ">
+            <p class="p-1">
+                Payor/Plan
+            </p>
+        </div>
         <div class="bg-white">
             <form action="" class="container">
-                    <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2 rounded  ng-star-inserted">
-                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center"> Payor/Plan  </p>
-                    <input type="text" id="fname" name="fname" placeholder="Plan Code *" class="rounded w-25 mx-2 mt-3" required disabled  />
-                    <input type="text" id="lname" name="lname" placeholder="Plan Name *" class="rounded large" disabled>
-                    <textarea id="description" name="description" rows="4" cols="63" class="text-secondary rounded mt-3 mx-2" disabled>Description</textarea>
-                    <input type="email" id="email" name="email" placeholder="Client Type" class="rounded small mx-2 mt-3" disabled>
-                    <input type="text" id="birthday" name="birthday" placeholder="Client Classes" class="rounded small mx-2" disabled>
-                    <input type="text" id="lname" name="lname" placeholder="Effective Form" class="rounded small mx-2 mt-3" disabled>           
-                    <input type="email" id="email" name="email" placeholder="Effective To" class="rounded small mx-2" disabled> <br>                 
+                <div _ngcontent-vcp-c572=""
+                    class="visit-information position-relative border-2 rounded  ng-star-inserted">
+                    <p _ngcontent-vcp-c572=""
+                        class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center">
+                        Payor/Plan
+                    </p>
+                    <div class="d-flex mt-2">
+                        <span class="p-float-label">
+                            <input id="plan-code" type="number" disabled pInputText
+                                class="w-75 input-shadow rounded  ms-2 mt-3  shadow "
+                                style="background-color: rgb(221, 217, 217);" [readOnly]="true" />
+                            <label class="pt-2 px-2 text-secondary ">
+                                Plan Code
+                                <span class="text-danger fw-medium">*</span>
+                            </label>
+                        </span>
+                        <span class="p-float-label">
+                            <input id="username" class="rounded  mt-3   " type="text" disabled
+                                style="width: 300px; margin-left: -20px;  background-color: rgb(221, 217, 217);"
+                                pInputText class=" input-shadow  rounded shadow  mt-3 " />
+                            <label class="pt-2 ">
+                                Plan Name
+                                <span class="text-danger fw-medium">*</span>
+                            </label>
+                        </span>
+                    </div>
+                    <textarea id="description" name="description" rows="4" cols="62"
+                        class="text-secondary rounded mt-3 mx-2 shadow" disabled>Description</textarea>
+                    <input type="email" id="email" name="email" placeholder="Client Type"
+                        class="rounded small mx-2 mt-3 shadow" disabled>
+                    <input type="text" id="birthday" name="birthday" placeholder="Client Classes"
+                        class="rounded small mx-2 shadow" disabled>
+                    <input type="text" id="lname" name="lname" placeholder="Effective Form"
+                        class="rounded small mx-2 mt-3 shadow" disabled>
+                    <input type="email" id="email" name="email" placeholder="Effective To"
+                        class="rounded small mx-2 shadow" disabled> <br>
                     <label class="text-secondary mx-2 mt-3 private-duty">Private Duty</label>
-                      <a class=" form-switch" >  <input class="form-check-input mt-3 ck bg-success fw-bold" type="checkbox" value="yes "  checked disabled></a>
-                      <div class="text-white m-2  mt-4 ">
-                   <button type="button" class="text-white  w-25 bg-black mx-2" disabled> <a class="text-white"> <i class="pi pi-times"></i>Cancel </a></button>
+                    <a class=" form-switch">
+                        <input class="form-check-input mt-3 ck bg-secondary fw-bold" type="checkbox" value="yes "
+                            checked disabled>
+                    </a>
+                    <div class="text-white m-2  mt-4 ">
+                        <button type="button" class="text-white  w-25 bg-black mx-2" disabled>
+                            <a class="text-white">
+                                <i class="pi pi-times"></i>
+                                Cancel
+                            </a>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>  
-    <div class="col-md-4  container box-shadow shadow  bg-white  edit pdropdown sandata data cn-cot payor-paln " *ngIf="payload" > 
+    </div>
+    <div class="col-md-4  container box-shadow shadow  bg-white  edit pdropdown sandata data cn-cot payor-paln "
+        *ngIf="payload">
         <div class="text-white fs-5 px-3 bg-primary mt-1 ">
-            <p class="p-1">Payor/Plan</p>
+            <p class="p-1">
+                Payor/Plan
+            </p>
         </div>
-     <p-tabView>
-     <p-tabPanel header="Payor/Plan">
-    <div class="bg-white ">
-        <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
-            <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center " style="position: absolute ; top: -18px;"> Payor/Plan  </p>
-        <div class="d-flex mt-2">
-            <span class="p-float-label">
-                <input  id="plan-code"  type="number" 
-                 pInputText class="w-75 input-shadow bg-light-grey rounded  ms-3 mt-3  small text-black" 
-                 [readOnly]="true" [(ngModel)]="payorPlanItem.planCode" [ngModelOptions]="{standalone: true}"/>
-                 <label  class="pt-3 px-3 text-secondary ">Plan Code <span class="text-danger fw-medium">*</span></label>
-            </span>
-            <span class="p-float-label">
-                <input  id="username" class="rounded  mt-3  large  planname" type="text" 
-                pInputText class=" input-shadow bg-light-grey rounded   mt-3  large text-black" 
-                 [(ngModel)]="payorPlanItem.plan"   [readOnly]="true"/>
-                <label  class="pt-3 px-1">Plan Name <span class="text-danger fw-medium">*</span></label>
-            </span>
-        </div>
-            <span class="p-float-label">
-                <textarea id="float-input" rows="3" cols="58" 
-                pInputText class="rounded mt-4 mx-3 text-black" [readOnly]="true"
-                [(ngModel)]="payorPlanItem.plan" ></textarea>
-                <label class="pt-4 mx-3">Summary</label>
-            </span>
-        <div class="d-flex">
-            <span class="p-float-label">
-                <input  id="username"  class="rounded  mx-3 mt-3 "  [readOnly]="true" />
-                <label htmlFor="username" class="pt-3 px-3">client type</label>
-            </span>
-            <span class="p-float-label">
-                <input  id="username" class="rounded  mx-2 mt-3 "  [readOnly]="true"/>
-                <label  class="pt-3 px-3">client classes</label>
-            </span>
-        </div>
-        <div class="d-flex mt-3 border-0 ">
-            <div class=" mx-3 p-float-label">
-              <input type="text"
-              [readOnly]="true"
-                     class="form-control  text-black"
-                     bsDatepicker
-                     [bsConfig]="{ adaptivePosition: true }"
-                     [(ngModel)]="payorPlanItem.fromDateString">
-            </div>
-            <div class="mx-2 p-float-label">
-              <input type="text"
-              [readOnly]="true"
-                     class="form-control text-black"
-                     bsDatepicker
-                     [bsConfig]="{ adaptivePosition: true }"
-                     [(ngModel)]="payorPlanItem.fromDateString">
-                    
-            </div>
-          </div>
-        <label class="text-secondary mx-3 mt-3 private-duty fw-bold">Private Duty</label>
-          <a class=" form-switch" >  <input class="form-check-input mt-3 text-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"  checked 
-            style="width: 50px; color: rgb(156, 155, 155); background-color: gray;" disabled></a>
-          <div class="text-white   mt-4 mb-2 mx-3">
-            <button type="button" class="text-white  w-25 bg-black  btt" (click)="cancel()" > <i class="pi pi-times mx-1"></i>Cancel</button>
-        </div>
-        </div>
-</div>     
- </p-tabPanel>
-
-
-
-
-
- <p-tabPanel header="Payor/Plan Service">
-    <span class="p-float-label">
-        <p-dropdown [autoDisplayFirst]="false" 
-        [filter]="true" filterBy="UserOfficeList"
-         [options]="UserOfficeList"
-         
-          [virtualScroll]="true" [itemSize]="30" 
-          optionValue="id" (onChange)="onClicked()" 
-          optionLabel="name" class="w-50"
-          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form fw-bold">
-        </p-dropdown>
-        <label for="dropdown" class="color-black">Site</label>
-      </span>
-
-
-    <div *ngIf="PayorPlanServiceFlag" class="fw-bold text-black pt-1 fs-5">
-        <p class=" fw-semibold" style="font-size: 18px;">Please select site to view or edit the data</p>
-      </div>
- 
-        <div *ngIf="PayorPlanServiceFlagData">
-            <form action="" class="container  con-input mt-3 " >
-              
+        <p-tabView>
+            <p-tabPanel header="Payor/Plan">
+                <div class="bg-white ">
                     <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
-                        <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center " 
-                        style="font-size: 12px;"> ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service  </p>
-                  
-                    <div class="d-flex ">
-                        <span class="p-float-label">
-                            <input id="username" class="rounded mx-4  mt-3 bg-secondary" disabled/>
-                            <label htmlFor="username" class="pt-2 px-4 text-white">Service <span class="text-danger ">*</span> </label>
-                        </span>
-                        <span class="p-float-label">
-                            <input id="plan" class="rounded  mx-2 mt-3 "  />
-                            <label class="pt-3 px-3">Pay Rate <span class="text-danger fw-medium">*</span></label>
-                        </span>
-                    </div>
-                    <div class="d-flex mt-3 border-0 ">
-                        <div class=" mx-4 p-float-label">
-                          <input type="text"
-                            
-                                 class="form-control  "
-                                 bsDatepicker
-                                 [bsConfig]="{ adaptivePosition: true }">
-                                 <label >Effective From</label>
+                        <p _ngcontent-vcp-c572=""
+                            class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "
+                            style="position: absolute ; top: -18px;">
+                            Payor/Plan
+                        </p>
+                        <div class="d-flex mt-2">
+                            <span class="p-float-label">
+                                <input id="plan-code" type="number" style="background-color: hsl(210, 16%, 93%);"
+                                    pInputText
+                                    class="w-75 input-shadow bg-light-grey rounded  ms-3 mt-3  small text-black shadow"
+                                    [readOnly]="true" [(ngModel)]="payorPlanItem.planCode"
+                                    [ngModelOptions]="{standalone: true}" />
+                                <label class="pt-3 px-3 text-secondary ">
+                                    Plan Code
+                                    <span class="text-danger fw-medium">*</span>
+                                </label>
+                            </span>
+                            <span class="p-float-label">
+                                <input id="username" class="rounded  mt-3  large  planname shadow" type="text"
+                                    style="background-color: hsl(210, 16%, 93%);" pInputText
+                                    class=" input-shadow bg-light-grey rounded   mt-3  large text-black shadow"
+                                    [(ngModel)]="payorPlanItem.plan" [readOnly]="true" />
+                                <label class="pt-3 px-1">
+                                    Plan Name
+                                    <span class="text-danger fw-medium">*</span>
+                                </label>
+                            </span>
                         </div>
-                        <div class="mx-2 p-float-label">
-                          <input type="text"
-                               
-                                 class="form-control "
-                                 bsDatepicker
-                                 [bsConfig]="{ adaptivePosition: true }">
-                                 <label class="px-2">Effective To</label>
+                        <span class="p-float-label">
+                            <textarea id="float-input" rows="3" cols="58" style="background-color: hsl(210, 16%, 93%);"
+                                pInputText class="rounded mt-4 mx-3 text-black shadow" [readOnly]="true"
+                                [(ngModel)]="payorPlanItem.plan"></textarea>
+                            <label class="pt-4 mx-3">
+                                Summary
+                            </label>
+                        </span>
+                        <div class="d-flex">
+                            <span class="p-float-label">
+                                <input id="username" class="rounded  mx-3 mt-3 shadow" [readOnly]="true"
+                                    style="background-color: hsl(210, 16%, 93%);" />
+                                <label htmlFor="username" class="pt-3 px-3">
+                                    client type
+                                </label>
+                            </span>
+                            <span class="p-float-label">
+                                <input id="username" class="rounded  mx-2 mt-3 shadow" [readOnly]="true"
+                                    style="background-color: hsl(210, 16%, 93%);" />
+                                <label class="pt-3 px-3">
+                                    client classes
+                                </label>
+                            </span>
                         </div>
-                      </div>
-                    <div class="d-flex mx-4 inputswitch">
-                        <div>
-                            <label class=" mx-3 mt-3 private-duty">Facility Type</label>
-                            <div class=" justify-content-center mx-4 ">
-                                <a class=" form-switch "> <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
-                                        checked></a>
+                        <div class="d-flex mt-3 border-0 ">
+                            <div class=" mx-3 p-float-label">
+                                <input type="text" [readOnly]="true" style="background-color: hsl(210, 16%, 93%);"
+                                    class="form-control  text-black shadow" bsDatepicker
+                                    [bsConfig]="{ adaptivePosition: true }" [(ngModel)]="payorPlanItem.fromDateString">
+                            </div>
+                            <div class="mx-2 p-float-label">
+                                <input type="text" [readOnly]="true" style="background-color: hsl(210, 16%, 93%);"
+                                    class="form-control text-black shadow" bsDatepicker
+                                    [bsConfig]="{ adaptivePosition: true }" [(ngModel)]="payorPlanItem.fromDateString">
+ 
                             </div>
                         </div>
-                        <div class="switch">
-                            <label class="  mt-3 private-duty">Allow  Double Booking</label>
-                            <div class=" justify-content-center mx-2 ">
-                                <a class=" form-switch"> <input class="form-check-input mt-3 check" type="checkbox" value="yes "
-                                        checked></a>
-                            </div>
+                        <label class="text-secondary mx-3 mt-3 private-duty fw-bold">
+                            Private Duty
+                        </label>
+                        <a class=" form-switch">
+                            <input class="form-check-input mt-3 text-secondary" type="checkbox" role="switch"
+                                id="flexSwitchCheckDefault" checked
+                                style="width: 50px; color: rgb(156, 155, 155); background-color: gray;" disabled>
+                        </a>
+                        <div class="text-white   mt-4 mb-2 mx-3">
+                            <button type="button" class="text-white  w-25 bg-black  btt" (click)="cancel()">
+                                <i class="pi pi-times mx-1"></i>
+                                Cancel
+                            </button>
                         </div>
                     </div>
-                    <span class="p-float-label mx-4 mt-1">
-                        <input id="plan" class="rounded  mx-3 mt-3 " />
-                        <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
-                    </span> 
-                  <div class="mt-4 mx-4 mb-2">
-                    <button type="button" class="text-white  w-25 bg-black mx-2" 
-                    (click)="PayPlan()"> <i class="pi pi-times px-1"></i>Cancel</button>
-                    <button type="button" class="text-white  w-25 bg-primary mx-2"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reset</button>
-                    <button type="button" class="text-white  w-25 bg-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-                        <i class="pi pi-save px-1"></i>Save</button>
-                  </div>
-                 
-                    </div>
-                    <p class="border border-2 bg-secondary text-black fw-bold text-center ">No Data Found</p>
-                
-                
-            </form> 
-            
-                
-            
-        </div>
-  
-     </p-tabPanel>    
-
-
-
-
-
-
-
-
- <p-tabPanel header="Sandata Payor/Plan Service">
-    <span class="p-float-label">
-        <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList" [options]="UserOfficeList"
-        [virtualScroll]="true" [itemSize]="30" optionValue="id" (onChange)="SanDataPayorPlanService( )"
-          optionLabel="name" class="w-50 fw-bold"
-          styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form fw-bold">
-        </p-dropdown>
-        <label for="dropdown" class="color-black">Site</label>
-      </span>
-
-<div *ngIf="SanDataPayorPlanServiceFlag" class="fw-bold text-black pt-1 fs-5" >
-    <p class=" fw-semibold" style="font-size: 18px;">Please select site to view or edit the data</p>
-</div>
-
-
-
-  
-
-    <form action="" class="container in-field mt-3 " *ngIf="SanDataPayorPlanServiceFlagDetails" >
-        <fieldset>
-            <div _ngcontent-vcp-c572="" class="visit-information position-relative border-2   ng-star-inserted">
-                <p _ngcontent-vcp-c572="" class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "    style="font-size: 13px;"> Sandata Payor/Plan Service  </p>
-          
-            <div class="d-flex mx-3 pdropdown">
-                <span class="p-float-label  mt-3 nnn w-75">
-                    <p-dropdown  optionLabel="name" [filter]="true" filterBy="name" diaabled [showClear]="true" placeholder="Select a Country">  
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Payor/Plan Service">
+                <span class="p-float-label">
+                    <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList"
+                        [options]="UserOfficeList" [virtualScroll]="true" [itemSize]="30" optionValue="id"
+                        (onChange)="onClicked()" optionLabel="name" class="w-50"
+                        styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form fw-bold shadow;">
                     </p-dropdown>
-                    <label class="pt-2">Site</label>
+                    <label for="dropdown" class="color-black">Site</label>
                 </span>
-                <span class="p-float-label ddd">
-                    <input id="username" class=" w-100  mt-3 bg-secondary pb-3 p-4 ddd" disabled/>
-                    <label htmlFor="username" class="pt-2 px-3 text-white">State Service </label>
+                <div *ngIf="PayorPlanServiceFlag" class="fw-bold text-black pt-1 fs-5">
+                    <p class=" fw-semibold" style="font-size: 18px;">
+                        Please select site to view or edit the data
+                    </p>
+                </div>
+                <div *ngIf="PayorPlanServiceFlagData">
+                    <form action="" class="container  con-input mt-3 ">
+                        <div _ngcontent-vcp-c572=""
+                            class="visit-information position-relative border-2   ng-star-inserted">
+                            <p _ngcontent-vcp-c572=""
+                                class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "
+                                style="font-size: 12px;">
+                                ICF/H 1-8 BEDS MONTHLY RATE - Payor/Plan Service
+                            </p>
+                            <div class="d-flex ">
+                                <span class="p-float-label">
+                                    <input id="username" class="rounded mx-4  mt-3 bg-light-grey shadow" disabled />
+                                    <label htmlFor="username" class="pt-2 px-4 text-white">
+                                        Service
+                                        <span class="text-danger ">*</span>
+                                    </label>
+                                </span>
+                                <span class="p-float-label">
+                                    <input id="plan" class="rounded  mx-2 mt-3 shadow "
+                                        style="background-color: hsl(210, 16%, 93%);" />
+                                    <label class="pt-3 px-3">
+                                        Pay Rate
+                                        <span class="text-danger fw-medium">*</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="d-flex mt-3 border-0 ">
+                                <div class=" mx-4 p-float-label">
+                                    <input type="text" style="background-color: hsl(210, 16%, 93%);"
+                                        class="form-control  shadow" bsDatepicker
+                                        [bsConfig]="{ adaptivePosition: true }">
+                                    <label>Effective From</label>
+                                </div>
+                                <div class="mx-2 p-float-label">
+                                    <input type="text" style="background-color: hsl(210, 16%, 93%);"
+                                        class="form-control shadow" bsDatepicker
+                                        [bsConfig]="{ adaptivePosition: true }">
+                                    <label class="px-2">Effective To</label>
+                                </div>
+                            </div>
+                            <div class="d-flex mx-4 inputswitch">
+                                <div>
+                                    <label class=" mx-3 mt-3 private-duty">Facility Type</label>
+                                    <div class=" justify-content-center mx-4 ">
+                                        <a class=" form-switch ">
+                                            <input class="form-check-input mt-3 check blur" type="checkbox" value="yes "
+                                                checked>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="switch">
+                                    <label class="  mt-3 private-duty">Allow Double Booking</label>
+                                    <div class=" justify-content-center mx-2 ">
+                                        <a class=" form-switch">
+                                            <input class="form-check-input mt-3 check" type="checkbox" value="yes "
+                                                checked>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="p-float-label mx-4 mt-1">
+                                <input id="plan" class="rounded  mx-3 mt-3 shadow"
+                                    style="background-color: hsl(210, 16%, 93%);" />
+                                <label htmlFor="username" class="pt-3 px-3">Times Double Booking</label>
+                            </span>
+                            <div class="mt-4 mx-4 mb-2">
+                                <button type="button" class="text-white  w-25 bg-black mx-2" (click)="PayPlan()">
+                                    <i class="pi pi-times px-1"></i>
+                                    Cancel
+                                </button>
+                                <button type="button" class="text-white  w-25 bg-primary mx-2" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">
+                                    Reset
+                                </button>
+                                <button type="button" class="text-white  w-25 bg-success mx-2" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="pi pi-save px-1"></i>
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                        <p class="border border-2  text-black fw-bold text-center "
+                            style="background-color: hsl(210, 16%, 93%);">
+                            No Data Found
+                        </p>
+                    </form>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Sandata Payor/Plan Service">
+                <span class="p-float-label">
+                    <p-dropdown [autoDisplayFirst]="false" [filter]="true" filterBy="UserOfficeList"
+                        [options]="UserOfficeList" [virtualScroll]="true" [itemSize]="30" optionValue="id"
+                        (onChange)="SanDataPayorPlanService( )" optionLabel="name" class="w-50 fw-bold"
+                        styleClass="w-50 input-shadow bg-light-grey AvenirLTStd-Medium auth-form fw-bold shadow">
+                    </p-dropdown>
+                    <label for="dropdown" class="color-black">Site</label>
                 </span>
-                <div class="mt-4 mx-4">
-                    <i class="pipi-server fs-5" ></i>
-                    <i class="pi pi-server fs-5 text-black bg-success fw-normal" ></i>
+                <div *ngIf="SanDataPayorPlanServiceFlag" class="fw-bold text-black pt-1 fs-5">
+                    <p class=" fw-semibold" style="font-size: 18px;">
+                        Please select site to view or edit the data
+                    </p>
                 </div>
-            </div>
-            <div class="d-flex mt-3 border-0 ">
-                <div class=" mx-3 p-float-label">
-                  <input type="text"
-                    
-                         class="form-control  "
-                         bsDatepicker
-                         [bsConfig]="{ adaptivePosition: true }">
-                         <label >Effective From</label>
+                <form action="" class="container in-field mt-3 " *ngIf="SanDataPayorPlanServiceFlagDetails">
+                    <fieldset>
+                        <div _ngcontent-vcp-c572=""
+                            class="visit-information position-relative border-2   ng-star-inserted">
+                            <p _ngcontent-vcp-c572=""
+                                class="visit-info-text AvenirLTStd-Heavy bg-white d-flex align-items-center "
+                                style="font-size: 13px;">
+                                Sandata Payor/Plan Service
+                            </p>
+                            <div class="d-flex mx-3 pdropdown">
+                                <span class="p-float-label  mt-3 nnn w-75">
+                                    <p-dropdown optionLabel="name" [filter]="true" filterBy="name" diaabled
+                                        [showClear]="true" placeholder="Select a Country">
+                                    </p-dropdown>
+                                    <label class="pt-2">Site</label>
+                                </span>
+                                <span class="p-float-label ddd">
+                                    <input id="username" class=" w-100  mt-3 bg-light-grey pb-3 p-4 ddd shadow"
+                                        disabled />
+                                    <label htmlFor="username" class="pt-2 px-3 text-white">State Service </label>
+                                </span>
+                                <div class="mt-4 mx-4">
+                                    <i class="pipi-server fs-5"></i>
+                                    <i class="pi pi-server fs-5 text-black bg-success fw-normal"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3 border-0 ">
+                                <div class=" mx-3 p-float-label">
+                                    <input type="text" style="background-color: hsl(210, 16%, 93%);"
+                                        class="form-control  shadow" bsDatepicker
+                                        [bsConfig]="{ adaptivePosition: true }">
+                                    <label>Effective From</label>
+                                </div>
+                                <div class="mx-2 p-float-label">
+                                    <input type="text" style="background-color: hsl(210, 16%, 93%);"
+                                        class="form-control shadow" bsDatepicker
+                                        [bsConfig]="{ adaptivePosition: true }">
+                                    <label class="px-2">Effective To</label>
+                                </div>
+                            </div>
+                            <div class="mt-4 mx-4 mb-2 d-flex justify-content-between">
+                                <button type="button" class="text-white  bg-black mx-2" (click)="PayPlan()">
+                                    <i class="pi pi-times px-1"></i>
+                                    Cancel
+                                </button>
+                                <button type="button" class="text-white  bg-success mx-2" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="pi pi-save px-1"></i>
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="d-flex mt-2 shadow" *ngIf="SanDataPayorPlanServiceFlagDetails">
+                    <div class=" container  ">
+                        <table class="table  table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Service </th>
+                                    <th>State Service </th>
+                                    <th>Effective From </th>
+                                    <th>Effective To </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="border border-2  text-black fw-bold text-center w-100 " style="margin-top: -25px;"
+                            style="background-color: hsl(210, 16%, 93%);">No Data Found</p>
+                    </div>
                 </div>
-                <div class="mx-2 p-float-label">
-                  <input type="text"
-                       
-                         class="form-control "
-                         bsDatepicker
-                         [bsConfig]="{ adaptivePosition: true }">
-                         <label class="px-2">Effective To</label>
-                </div>
-              </div>
-          <div class="mt-4 mx-4 mb-2 d-flex justify-content-between">
-            <button type="button" class="text-white  bg-black mx-2" (click)="PayPlan()"> <i class="pi pi-times px-1"    ></i>Cancel</button>
-            <button type="button" class="text-white  bg-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="pi pi-save px-1"></i>Save</button>
-          </div>
-            </div>
-        </fieldset>
-    </form>
-    <div class="d-flex mt-2 shadow" *ngIf="SanDataPayorPlanServiceFlagDetails">
-        <div class=" container  ">
-            <table class="table  table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Service </th>
-                        <th>State Service </th>
-                        <th>Effective From </th>
-                        <th>Effective To </th>
-                    </tr>
-                </thead>
-              <tbody>
-                <tr>
-                    <td></td>
-                </tr>
-              </tbody>
-                    
-                
-              
-            </table>
-            <p class="border border-2 bg-secondary text-black fw-bold text-center w-100 " style="margin-top: -25px;">No Data Found</p>
-        </div>
-      </div>
-
- </p-tabPanel>
-            
-  </p-tabView> 
-
-
-
-
-    </div> 
-
-
-
-
-    <div class="modal fade" id="exampleModal1" 
-    data-bs-backdrop="static" data-bs-keyboard="false" 
-    tabindex="-1" aria-labelledby="staticBackdropLabel"
-     aria-hidden="true">
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+    <div class="modal fade" id="exampleModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="d-flex justify-content-between bg-black text-white px-2 fs-5 pt-2">
-                <p class="fs-5">Visit Review Attributes</p>
-                <i><i class="pi pi-times" data-bs-dismiss="modal"></i></i>
-            </div>
-            <div class="modal-body">
+            <div class="modal-content">
+                <div class="d-flex justify-content-between bg-black text-white px-2 fs-5 pt-2">
+                    <p class="fs-5">
+                        Visit Review Attributes
+                    </p>
+                    <i>
+                        <i class="pi pi-times" data-bs-dismiss="modal"></i>
+                    </i>
+                </div>
+                <div class="modal-body">
                     <div class=" w-100">
                         <div class="d-flex justify-content-between text-black  ">
-                            <p>Does Payor Provide a Timesheet that is  Required?</p>
+                            <p>Does Payor Provide a Timesheet that is Required?</p>
                             <div class=" text-secondary">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black ">
                             <p>PS Daily Signature Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>DCS Daily Signature Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>PS Weekly Signature Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>DCS Weekly Signature Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>Tasks Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>Progress Notes Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black  ">
                             <p>Supervisor Sign off Required?</p>
                             <div class="text-secondary pb-2">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between text-black ">
                             <p>Documentation Required to be sent to Hub/Payor?</p>
                             <div class=" text-secondary">
-                                <select class="form-select  fw-medium text-secondary " aria-label="Default select example">
-                                    <option selected=""class="text-black">Select</option>
+                                <select class="form-select  fw-medium text-secondary "
+                                    aria-label="Default select example">
+                                    <option selected="" class="text-black">Select</option>
                                     <option value="1" class="text-black">Yes</option>
                                     <option value="2" class="text-black">No</option>
-                                  </select>
+                                </select>
                             </div>
-                           
+ 
                         </div>
                         <div class=" modal-footer d-flex justify-content-between">
                             <button type="button" class="text-white   bg-black mx-2 " style="width: 100px;"
-                            data-bs-dismiss="modal"> <i class="pi pi-times px-1"></i>Close</button>
-                          
-                            <button type="button" class="text-white   bg-success mx-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-                                <i class="pi pi-save px-1"></i>Save</button>
-                          </div>
+                                data-bs-dismiss="modal">
+                                <i class="pi pi-times px-1"></i>
+                                Close
+                            </button>
+ 
+                            <button type="button" class="text-white   bg-success mx-2" style="width: 100px;"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="pi pi-save px-1"></i>
+                                Save
+                            </button>
+                        </div>
                     </div>
-               </div> 
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-
- 
-
-
-
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-       
-        <div class="modal-body bg-white bg-primary  pt-3 pb-3 text-center  rounded ">
-               <i class="pi pi-question fs-1  rounded-circle fw-bold p-3 mt-3 "
-               style="font-weight: 600; color: rgb(124, 234, 234); border: 3px solid rgb(124, 234, 234);"></i>
-               <p class="fs-4 fw-semibold">Are you sure you want to cancel? <br> You will lose updates that were <br> made.</p>
-               <button class="rounded text-white p-1 fw-semibold " data-bs-dismiss="modal"
-                  style="background-color: rgb(86, 99, 245);  border: 2px solid rgb(164, 241, 164) ; width: 150px; height: 50px; "
-                   >OK,Continue</button>
-                <button class="rounded text-white  fw-semibold p-1 mx-1" data-bs-dismiss="modal"
-                style="background-color: rgb(122, 121, 122);  border: 2px solid rgb(164, 241, 164) ; width: 80px; height: 50px;  "
-                   >Cancel</button>
-           </div> 
-       
-       
-      </div>
     </div>
-  </div>
-
-
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-       
-        <div class="modal-body bg-white bg-primary  pt-3 pb-3 text-center  rounded ">
-               <i class="pi pi-info fs-1  rounded-circle fw-bold p-3 mt-3 "
-               style="font-weight: 600; color: rgb(243, 203, 71); border: 3px solid rgb(243, 203, 71);"></i>
-               <p class="fs-4 fw-bold">Warning</p>
-               <p class="fw-semibold text-secondary" style="font-size: 15px;">Select a ServiceSelect Pay RateTimes Double Booking <br> Check cannot be empty and it should not be greather <br> than 25 </p>
-               <button class="rounded text-white p-1 fw-semibold " data-bs-dismiss="modal"
-                  style="background-color: rgb(86, 99, 245);  border: 2px solid rgb(164, 241, 164) ; width: 55px; height: 40px; "
-                   >OK</button>
-           </div> 
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body bg-white bg-primary  pt-3 pb-3 text-center  rounded ">
+                    <i class="pi pi-question fs-1  rounded-circle fw-bold p-3 mt-3 "
+                        style="font-weight: 600; color: rgb(124, 234, 234); border: 3px solid rgb(124, 234, 234);">
+                    </i>
+                    <p class="fs-4 fw-semibold">Are you sure you want to cancel? <br> You will lose updates that were
+                        <br> made.
+                    </p>
+                    <button class="rounded text-white p-1 fw-semibold " data-bs-dismiss="modal"
+                        style="background-color: rgb(86, 99, 245);  border: 2px solid rgb(164, 241, 164) ; width: 150px; height: 50px; ">
+                        OK,Continue
+                    </button>
+                    <button class="rounded text-white  fw-semibold p-1 mx-1" data-bs-dismiss="modal"
+                        style="background-color: rgb(122, 121, 122);  border: 2px solid rgb(164, 241, 164) ; width: 80px; height: 50px;  ">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
- 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body bg-white bg-primary  pt-3 pb-3 text-center  rounded ">
+                    <i class="pi pi-info fs-1  rounded-circle fw-bold p-3 mt-3 "
+                        style="font-weight: 600; color: rgb(243, 203, 71); border: 3px solid rgb(243, 203, 71);"></i>
+                    <p class="fs-4 fw-bold">Warning</p>
+                    <p class="fw-semibold text-secondary" style="font-size: 15px;">Select a ServiceSelect Pay RateTimes
+                        Double Booking <br> Check cannot be empty and it should not be greather <br> than 25
+                    </p>
+                    <button class="rounded text-white p-1 fw-semibold " data-bs-dismiss="modal"
+                        style="background-color: rgb(86, 99, 245);  border: 2px solid rgb(164, 241, 164) ; width: 55px; height: 40px; ">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    

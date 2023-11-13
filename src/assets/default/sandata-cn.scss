@@ -1,60 +1,60 @@
 .sandata{
-    .pdropdown{
+  .pdropdown{
+.p-dropdown {
+  width: 70%;
+  background: #f2f2ec;
+  height: 40px;
+  outline: none;
+}  
+
+p-dropdown{
+  outline: none;
+}
+}
   .p-dropdown {
-    width: 70%;
-    background: #f2f2ec;
-    height: 40px;
+    width: 250px;
+    background: #e7e8e6;
+    height: 40px !important;
     outline: none;
   }  
-
   p-dropdown{
     outline: none;
   }
-}
-    .p-dropdown {
-      width: 250px;
-      background: #e7e8e6;
-      height: 40px !important;
-      outline: none;
-    }  
-    p-dropdown{
-      outline: none;
-    }
-    width: 42%;
-    border: 1px solid rgb(238, 235, 235);
-    box-shadow: 3px,3px,3px,3px,rgb(164, 164, 164);
-  
-    
-    .form-check-input{
-        width: 50px;
-        height: 25px;
-        background-color: rgb(60, 189, 60);
-        // color: rgb(41, 212, 75);
-        outline: none;
-        border: 1px solid rgb(66, 201, 66);
-    }
+  width: 42%;
+  border: 1px solid rgb(238, 235, 235);
+  box-shadow: 3px,3px,3px,3px,rgb(164, 164, 164);
 
- .in-field input {
-    height: 40px;
-    width: 170px !important;
-    background-color: rgb(189, 200, 209)
+ 
+  .form-check-input{
+      width: 50px;
+      height: 25px;
+      background-color: rgb(60, 189, 60);
+      // color: rgb(41, 212, 75);
+      outline: none;
+      border: 1px solid rgb(66, 201, 66);
+  }
+
+.in-field input {
+  height: 40px;
+  width: 170px !important;
+  background-color: rgb(189, 200, 209)
 }
 .p-float-label label{
-    font-size: 13px;
-    font-weight: 400;
+  font-size: 13px;
+  font-weight: 400;
 }
 button {
-    @include border-radius(0px, 10px, 0px, 10px);
-    height: 37px;
-    width: 100px;
-    // background-color: rgb(54, 213, 115);
-    outline: none;
-    border: none;
+  @include border-radius(0px, 10px, 0px, 10px);
+  height: 37px;
+  width: 100px;
+  // background-color: rgb(54, 213, 115);
+  outline: none;
+  border: none;
 }
 input{
-    outline: none;
-    border: 1px solid rgb(189, 200, 209)
- 
+  outline: none;
+  border: 1px solid rgb(189, 200, 209)
+
 }
 
 // legend{
@@ -63,24 +63,24 @@ input{
 // }
 
 fieldset {
-    // border: 1px solid rgb(231, 228, 228);
-  
+  // border: 1px solid rgb(231, 228, 228);
+
 }
 
 .switch{
- margin-left: 150px;
+margin-left: 150px;
 }
 .pi{
-    font-size: 12px;
-    font-weight: 700;
+  font-size: 12px;
+  font-weight: 700;
 }
 .inputswitch label{
-    color: gray;
-    font-size: 13px;
-    font-weight: 600;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
 }
 .ddd{
-    margin-left: -25px;
+  margin-left: -25px;
 }
 
 
