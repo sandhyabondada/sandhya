@@ -15,7 +15,7 @@
         <div>
             <div class="dropdown-center mt-1">
                 <button class="btn btn-black dropdown-toggle text-primary border-0" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="true">
+                    data-bs-toggle="dropdown" >
                     Administrator, Administrator
                 </button>
                 <ul class="dropdown-menu">
@@ -80,21 +80,21 @@
                             </p>
                         </div>
                         <div class="flex align-items-center mx-3 ">
-                            <p-radioButton name="pizza" [value]="2" [(ngModel)]="privateDuty" inputId="ingredient1">
+                            <p-radioButton  [value]="2" [(ngModel)]="privateDuty" inputId="ingredient1">
                             </p-radioButton>
                             <label for="ingredient1" class="mx-1">
                                 All
                             </label>
                         </div>
                         <div class="flex align-items-center mx-3">
-                            <p-radioButton name="pizza" value="1" [(ngModel)]="privateDuty" inputId="ingredient2">
+                            <p-radioButton  value="1" [(ngModel)]="privateDuty" inputId="ingredient2">
                             </p-radioButton>
                             <label for="ingredient2" class="mx-1">
                                 Yes
                             </label>
                         </div>
                         <div class="flex align-items-center mx-3">
-                            <p-radioButton name="pizza" value="0" [(ngModel)]="privateDuty" inputId="ingredient3">
+                            <p-radioButton  value="0" [(ngModel)]="privateDuty" inputId="ingredient3">
                             </p-radioButton>
                             <label for="ingredient3" class="mx-1">
                                 No
@@ -119,7 +119,7 @@
                             <tr>
                                 <th class=" border-right sticky-top p-1 bg-black text-white"></th>
                                 <th class=" border-right sticky-top p-1 bg-black text-white"> Payor Code</th>
-                                <th class=" border-right  sticky-top p-1 bg-black text-white">Plan Code</th>
+                                <th class=" border-right sticky-top p-1 bg-black text-white">Plan Code</th>
                                 <th class=" border-right sticky-top p-1 bg-black text-white">Plan Name</th>
                                 <th class=" border-right sticky-top p-1 bg-black text-white">Effective From</th>
                                 <th class=" border-right sticky-top p-1 bg-black text-white ">Effective To</th>
@@ -146,15 +146,14 @@
                                 </td>
                                 <td>{{item.payorCode}}</td>
                                 <td>{{item.planCode}}</td>
-                                <td
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
                                     {{item.plan}}</td>
                                 <td>{{item.fromDateString}}</td>
                                 <td>{{item.toDateString}}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p class="border border-2  text-black fw-bold text-center w-100 mt-3 p-2"
+                    <p class="border border-2  text-black fw-bold text-center w-100 container mt-3 p-2"
                         style="background-color: hsl(210, 16%, 93%);" *ngIf="payorPlanList.length==0">No Data Found
                     </p>
                 </div>
@@ -164,7 +163,7 @@
                             Per Page
                         </span>
                         <select (change)="pageReset()" [(ngModel)]="perPage"
-                            class="border border-1 p-0  shadow text-black fw-semibold" style="font-size: 13px;">
+                            class="border border-1 p-0 shadow text-black fw-semibold" style="font-size: 13px;">
                             <option [ngValue]="10">10</option>
                             <option [ngValue]="20">20</option>
                             <option [ngValue]="30">30</option>

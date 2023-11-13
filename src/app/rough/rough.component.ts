@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../service/api.service';
-import { VisitReviewComponent } from '../sub-component/visit-review/visit-review.component';
 
 @Component({
   selector: 'app-rough',
@@ -14,15 +13,9 @@ export class RoughComponent {
   public items!: string[];
   public payorplan=true;
   public payload=false;
-  public VisitReview=false;
-  public ingredient: any;
-  public checked: boolean = false;
   public isDropdownOpen = false;
-  public cncot=false;
-  public resetData=false;
-  public loginfailed=false;
-  public payorplanserviceForm=false
-  public SandataPayorPlan=false
+  public payorplanserviceForm=false;
+  public SandataPayorPlan=false;
   public SanDataPayorPlanServiceFlag=true;
   public SanDataPayorPlanServiceFlagDetails=false;
   public PayorPlanServiceFlag=true;
@@ -35,7 +28,7 @@ export class RoughComponent {
   public privateDuty: any=2;
   public planCode=''
   public lowerBound: number = 1;
-  public upperBound: number = 18;
+  public upperBound: number = 9;
   public payorPlanItem:any;
   public editFlag:boolean=true;
   public editFormMapFlag:boolean=false;
@@ -67,7 +60,6 @@ export class RoughComponent {
 
     this.getPayorPlanList();
     this. getUserOfficeList();
-    // this.getPayorPlanServiceList();
     this.items = Array.from({ length: 30 }).map((_, i) => `Item #${i}`);
     this.payorPlanItem = {
       id: null,
@@ -83,7 +75,6 @@ export class RoughComponent {
       privateDuty:null,
       toDateString:'',
     }
-
    }
 
   public onClick(item:any){
@@ -140,26 +131,12 @@ export class RoughComponent {
   public getUserOfficeList()  {
      this.api.getUserOfficeList().subscribe(res => {
       console.log(res);
-    
-    
      this.UserOfficeList = res.map((x:any) => {
       return { id: x.id, name: x.name + " (" + x.code + ')', code: x.code }
     })
    })
  }
 
-  public OnClick(){
-    this.cncot=true;
- }
-
-  public OnSubmit(){
-    this. VisitReview=true;
- }
-
-  public onsubmit(){
-    this.VisitReview=false;
- }
-  
  public PayorPlanService(flag: any){
    if(flag=='payorplanserviceForm'){
     this.UserOfficeList(this.payorplanserviceForm)
@@ -203,24 +180,7 @@ public SanDataPayorPlanService(){
   this. SanDataPayorPlanServiceFlag=false;
   this. SanDataPayorPlanServiceFlagDetails=true;
 }
-
-// openModalWithClass(item) {
-//   this.modalRef = this.modalService.show(
-//     VisitReviewComponent,
-//     Object.assign({}, { class: 'preferrence-dcs ',initialState:{payorId:item.id} })
-//   );
-//   console.log(item)
-// }
-
-public Ok(){
-   this.resetData=false;
 }
-public Reset(){
-  this.resetData=true;
-}
-
-}
-
 
 interface Item {
   payorCode: number;
